@@ -1,5 +1,3 @@
-"use strict";
-
 var Chaplin = require('chaplin');
 
 // The application object.

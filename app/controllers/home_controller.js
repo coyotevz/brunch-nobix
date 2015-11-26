@@ -1,5 +1,3 @@
-"use strict";
-
 var Controller = require('controllers/base/controller');
 var HeaderView = require('views/home/header_view');
 var HomePageView = require('views/home/home_page_view');

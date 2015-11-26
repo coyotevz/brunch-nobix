@@ -1,5 +1,3 @@
-"use strict";
-
 var Pace = require('pace');
 var $ = require('jquery');
 var Application = require('application');

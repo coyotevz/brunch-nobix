@@ -1,5 +1,3 @@
-"use strict";
-
 var Chaplin = require('chaplin');
 
 module.exports = function(match) {

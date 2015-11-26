@@ -1,0 +1,24 @@
+{
+  "author": "Augusto Roccasalva",
+  "name": "nobix-fe",
+  "description": "Nobix frontend",
+  "version": "0.0.1",
+  "homepage": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "auto-reload-brunch": "^1.8.1",
+    "clean-css-brunch": "^1.8.0",
+    "css-brunch": "^1.7.0",
+    "javascript-brunch": "^1.8.0",
+    "sass-brunch": "^1.9.1",
+    "uglify-js-brunch": "^1.7.8"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "nobix-fe",
+  "description": "Nobix frontend",
+  "main": "public/javascripts/app.js",
+  "moduleType": "node",
+  "authors": [
+    "Augusto Roccasalva"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chaplin": "~1.1.1",
+    "jquery": "~2.1.4",
+    "normalize-css": "~3.0.3",
+    "h5bp-helpers": "~0.1.0",
+    "lodash": "~3.10.1"
+  },
+  "overrides": {
+    "backbone": {
+      "dependencies": {
+        "jquery": "*",
+        "lodash": "*"
+      },
+      "main": "backbone.js"
+    }
+  }
+}

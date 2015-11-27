@@ -30,6 +30,10 @@ exports.config = {
         //module: true,
       },
       warnOnly: true
+    },
+
+    nunjucks: {
+      templatePath: 'app/'
     }
   }
 };

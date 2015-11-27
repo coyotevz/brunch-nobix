@@ -1,7 +1,7 @@
 var BaseView = require('views/base_view');
 var HeaderView = require('views/header_view');
 
-module.exports = Chaplin.Controller.extend({
+module.exports = Controller = Chaplin.Controller.extend({
 
   beforeAction: function() {
     Controller.__super__.beforeAction.apply(this, arguments);

@@ -1,4 +1,4 @@
-var env = require('templates/env');
+//var env = require('templates/env');
 
 module.exports = View = Chaplin.View.extend({
   noWrap: true,

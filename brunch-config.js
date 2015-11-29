@@ -32,8 +32,8 @@ exports.config = {
       warnOnly: true
     },
 
-    nunjucks: {
-      templatePath: 'app/'
-    }
+    //nunjucks: {
+    //  templatePath: 'app/templates/'
+    //}
   }
 };

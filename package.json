@@ -19,8 +19,8 @@
     "css-brunch": "^1.7.0",
     "javascript-brunch": "^1.8.0",
     "jshint-brunch": "^1.8.0",
-    "nunjucks-brunch": "^0.3.3",
     "sass-brunch": "^1.9.1",
-    "uglify-js-brunch": "^1.7.8"
+    "uglify-js-brunch": "^1.7.8",
+    "nj-brunch": "*"
   }
 }

@@ -21,6 +21,6 @@
     "jshint-brunch": "^1.8.0",
     "sass-brunch": "^1.9.1",
     "uglify-js-brunch": "^1.7.8",
-    "nj-brunch": "*"
+    "nunjucks-compile-brunch": "*"
   }
 }

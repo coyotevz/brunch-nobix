@@ -11,7 +11,7 @@ module.exports = SupplierController = Controller.extend({
 
   beforeAction: function() {
     SupplierController.__super__.beforeAction.apply(this, arguments);
-    this.reuse('sidebar', SupplierSideView);
+    //this.reuse('sidebar', SupplierSideView);
     this.publishEvent('module:setCurrent', 'suppliers');
   },
 

@@ -1,3 +1,6 @@
+var Model, config;
+
+config = window.config || {};
 
 module.exports = Model = Chaplin.Model.extend({
 

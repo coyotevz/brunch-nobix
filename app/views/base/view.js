@@ -8,8 +8,6 @@ module.exports = View = Chaplin.View.extend({
         templateFunc = null;
 
       if (typeof template === 'string') {
-        var reqname = 'templates/' + template.replace('.html', '');
-        require(reqname);
         var env = new nunjucks.Environment();
         var tmpl = env.getTemplate(template);
         templateFunc = function(ctx) {

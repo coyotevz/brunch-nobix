@@ -1,3 +1,11 @@
+var backslashRe = new RegExp('\\\\', 'g');
+var dotRe = new RegExp('^(\.\.\/)*', 'g');
+var wrapperRe = /\.\w+$/;
+
+var cleanModuleName = function(path, nameCleaner) {
+  return nameCleaner(path.replace(backslashRe, '/').replace(dotRe, ''));
+}
+
 exports.config = {
   files: {
     javascripts: {
@@ -11,6 +19,20 @@ exports.config = {
     },
     templates: {
       joinTo: 'js/app.js'
+    }
+  },
+
+  modules: {
+    wrapper: function(path, data, isVendor) {
+      if (isVendor || /\.html$/.test(path)) {
+        return data;
+      }
+      var moduleName = cleanModuleName(path, exports.config.modules.nameCleaner).replace(wrapperRe, '');
+      path = JSON.stringify(moduleName);
+      return {
+        prefix: "require.register(" + path + ", function(exports, require, module) {\n",
+        suffix: '});\n\n',
+      }
     }
   },
 
@@ -35,5 +57,9 @@ exports.config = {
     //nunjucks: {
     //  templatePath: 'app/templates/'
     //}
+  },
+
+  server: {
+    port: 8000,
   }
 };

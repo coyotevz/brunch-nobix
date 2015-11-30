@@ -7,7 +7,7 @@ module.exports = Layout = Chaplin.Layout.extend({
   },
 
   regions: {
-    'root': '',
+    'root': 'body',
   },
 
   on_dispatch: function(controller, params, route) {

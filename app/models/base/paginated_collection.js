@@ -1,6 +1,6 @@
 var Collection = require('./collection');
 
-var PaginatedCollectoin = Collection.extend({
+var PaginatedCollection = Collection.extend({
   // Objects on page
   page: 0,
   num_pages: 1,
@@ -45,4 +45,4 @@ var PaginatedCollectoin = Collection.extend({
 
 });
 
-module.exports = PaginatedCollectoin;
+module.exports = PaginatedCollection;

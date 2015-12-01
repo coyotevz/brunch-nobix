@@ -1,7 +1,7 @@
 var PaginatedCollection = require('models/base/paginated_collection');
 var Supplier = require('models/supplier');
 
-var SupplierCollection = Chaplin.Collection.extend({
+var SupplierCollection = PaginatedCollection.extend({
   model: Supplier,
   urlRoot: '/suppliers',
 

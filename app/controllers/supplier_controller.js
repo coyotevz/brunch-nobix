@@ -5,7 +5,7 @@ var SupplierSideView = require('views/supplier/side_view');
 var SupplierListView = require('views/supplier/list_view');
 var SupplierDetailView = require('views/supplier/detail_view');
 
-module.exports = SupplierController = Controller.extend({
+var SupplierController = Controller.extend({
 
   title: 'Suppliers',
 
@@ -35,3 +35,5 @@ module.exports = SupplierController = Controller.extend({
   },
 
 });
+
+module.exports = SupplierController;

@@ -2,7 +2,7 @@ var Model, config;
 
 config = window.config || {};
 
-module.exports = Model = Chaplin.Model.extend({
+var Model = Chaplin.Model.extend({
 
   url: function() {
     var base;
@@ -19,3 +19,5 @@ module.exports = Model = Chaplin.Model.extend({
   },
 
 });
+
+module.exports = Model;

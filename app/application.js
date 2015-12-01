@@ -1,7 +1,7 @@
 var Layout = require('views/layout');
 
 // The application object.
-module.exports = Application = Chaplin.Application.extend({
+var Application = Chaplin.Application.extend({
   title: 'Nobix',
 
   initLayout: function(options) {
@@ -31,3 +31,5 @@ module.exports = Application = Chaplin.Application.extend({
     Application.__super__.start.apply(this, args);
   }
 });
+
+module.exports = Application;

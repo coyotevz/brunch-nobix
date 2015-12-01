@@ -1,7 +1,9 @@
 var Model = require('models/base/model');
 
-module.exports = Supplier = Model.extend({
+var Supplier = Model.extend({
 
   urlRoot: '/suppliers',
 
 });
+
+module.exports = Supplier;

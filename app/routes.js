@@ -1,4 +1,4 @@
-module.exports = function(match) {
+var routes = function(match) {
 
   /* suppliers */
   match('', 'supplier#list', {name: 'supplier_list'});
@@ -9,3 +9,5 @@ module.exports = function(match) {
   match('hr', 'hr#list', {name: 'hr_list'});
   match('hr/:id', 'hr#show', {name: 'hr_show'});
 };
+
+module.exports = routes;

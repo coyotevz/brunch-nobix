@@ -1,6 +1,8 @@
 var Supplier = require('models/supplier');
 
-module.exports = SupplierCollection = Chaplin.Collection.extend({
+var SupplierCollection = Chaplin.Collection.extend({
   model: Supplier,
   urlRoot: '/suppliers',
 });
+
+module.exports = SupplierCollection;

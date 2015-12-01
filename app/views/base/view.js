@@ -1,4 +1,5 @@
-module.exports = View = Chaplin.View.extend({
+
+var View = Chaplin.View.extend({
   noWrap: true,
   autoRender: true,
 
@@ -28,3 +29,5 @@ module.exports = View = Chaplin.View.extend({
   },
 
 });
+
+module.exports = View;

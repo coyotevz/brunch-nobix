@@ -1,4 +1,6 @@
 var View = require('views/base/view');
 
-module.exports = HeaderView = View.extend({
+var HeaderView = View.extend({
 });
+
+module.exports = HeaderView;

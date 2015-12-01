@@ -1,4 +1,5 @@
-module.exports = Layout = Chaplin.Layout.extend({
+
+var Layout = Chaplin.Layout.extend({
 
   title: 'Nobix',
 
@@ -22,3 +23,5 @@ module.exports = Layout = Chaplin.Layout.extend({
   },
 
 });
+
+module.exports = Layout;

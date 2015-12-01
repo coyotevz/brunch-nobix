@@ -1,6 +1,6 @@
 var View = require('views/base/view');
 
-module.exports = BaseView = View.extend({
+var BaseView = View.extend({
   className: 'wrapper',
   noWrap: false,
   template: 'base.html',
@@ -14,3 +14,5 @@ module.exports = BaseView = View.extend({
     console.log('BaseView#initialize(%s)', this.cid);
   },
 });
+
+module.exports = BaseView;

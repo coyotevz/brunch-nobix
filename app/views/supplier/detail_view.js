@@ -1,6 +1,6 @@
 var View = require('views/base/view');
 
-module.exports = SupplierDetailView = View.extend({
+var SupplierDetailView = View.extend({
   autoRender: false,
   template: 'supplier/detail.html',
 
@@ -8,3 +8,5 @@ module.exports = SupplierDetailView = View.extend({
     'sync model': 'render',
   }
 });
+
+module.exports = SupplierDetailView;

@@ -1,8 +1,19 @@
+var SidebarView = require('views/base/sidebar_view');
 
-module.exprts = SupplierSideView = Chaplin.View.extend({
+var SupplierSideView = SidebarView.extend({
+
+  menuItems: [
+    {
+      name: 'showall',
+      label: 'Ver Todos',
+      action: 'showAll',
+    }
+  ],
 
   showAll: function() {
     console.log('show all!');
   },
 
 });
+
+module.exports = SupplierSideView;

@@ -1,0 +1,8 @@
+<ul class="module-nav collapsible">
+  {% for item in items %}
+  <li id="item-{{ item.name }}" class="nav-item"><a>{{ item.label }}</a></li>
+  {% endfor %}
+</ul>
+
+{# vim: ft=jinja:sw=2
+#}

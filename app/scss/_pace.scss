@@ -1,0 +1,57 @@
+/*
+ * PACE progress indicator theme
+ */
+
+// Variables
+$pace-main-color: #2299dd;
+$pace-zindex: 2000;
+$pace-bar-width: 250px;
+$pace-bar-height: 6px;
+$pace-bar-border: $pace-main-color;
+$pace-bar-bg-color: $white;
+
+.pace {
+  pointer-events: none;
+  user-select: none;
+
+  z-index: $pace-zindex;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: $pace-bar-height;
+  width: $pace-bar-width;
+  background: #fff;
+  border: 1px solid $pace-bar-border;
+
+  overflow: hidden;
+
+  &.pace-inactive { display: none; }
+
+  .pace-progress {
+    box-sizing: border-box;
+    transform: translate3d(0,0,0);
+
+    max-width: $pace-bar-width;
+    position: fixed;
+    z-index: $pace-zindex;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    height: 100%;
+    width: 100%;
+    background: $pace-main-color;
+
+  }
+}
+
+.pace-running .wrapper {
+  opacity: 0;
+}
+
+body .wrapper {
+  transition: opacity .211s;
+}

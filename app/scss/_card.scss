@@ -1,0 +1,74 @@
+
+.card {
+
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+
+  &,
+  &.col {
+    padding: 20px 0;
+    & > * {
+      padding: 0 20px;
+    }
+  }
+
+
+  .card-header {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid whitesmoke;
+
+    .card-title {
+      display: block;
+      color: #262626;
+      margin: 0;
+    }
+
+    .info-horizontal {
+
+      &.secondary-info {
+        color: #888;
+        font-style: normal;
+        font-size: 13px;
+        line-height: 18px;
+        address {
+          font-style: normal;
+        }
+      }
+
+      display: table;
+      padding: 0;
+
+      .info-row {
+        display: table-row;
+
+        .info-label,
+        .info-data {
+          display: table-cell;
+        }
+
+        .info-label {
+          font-weight: bold;
+          padding-right: 16px;
+          white-space: nowrap;
+
+          &.light {
+            font-weight: normal;
+          }
+        }
+
+        .info-data {
+          white-space: normal;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  .card-body {
+  }
+
+  .card-action {
+  }
+}
+
+// vim:sw=2

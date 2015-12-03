@@ -15,7 +15,11 @@ exports.config = {
       }
     },
     stylesheets: {
-      joinTo: 'css/app.css'
+      joinTo: 'css/app.css',
+      order: {
+        before: ['bower_components/normalize-css/normalize.css'],
+        after: ['bower_components/h5bp-helpers/helpers.css']
+      }
     },
     templates: {
       joinTo: 'js/app.js'

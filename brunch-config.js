@@ -12,6 +12,17 @@ exports.config = {
       joinTo: {
         'js/app.js': /^app/,
         'js/vendor.js': /^(?!app)/
+      },
+      order: {
+        before: [
+          'bower_components/jquery/dist/jquery.js',
+          'vendor/scripts/materialize/jquery.easing.1.3.js',
+          'vendor/scripts/materialize/velocity.min.js',
+          'vendor/scripts/materialize/hammer.min.js',
+          'vendor/scripts/materialize/jquery.hammer.js',
+          'vendor/scripts/materialize/dropdown.js',
+          'vendor/scripts/materialize/sideNav.js'
+        ]
       }
     },
     stylesheets: {

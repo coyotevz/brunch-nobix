@@ -33,11 +33,24 @@ var HeaderView = View.extend({
   },
 
   setupView: function() {
-    //this.$('.button-collapse').on("click", function() {
-    //  $(this).tolltip('hide');
-    //}).sideNav({
-    //  closeOnClick: true
-    //});
+    this.$('.button-collapse').on("click", function() {
+      $(this).tooltip('hide');
+    }).sideNav({
+      closeOnClick: true
+    });
+
+
+    // TODO: This needs more work
+    this.$('.searchbox').on("click", function() {
+      $('.search-input input', this).trigger("focus");
+    });
+    this.$('.search-input input')
+    .on("focusin", function() {
+      $('.appbar').addClass('on-search');
+    })
+    .on("focusout", function() {
+      $('.appbar.on-search').removeClass('on-search');
+    });
   },
 
 });

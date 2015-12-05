@@ -1,6 +1,5 @@
-var Model, config;
 
-config = window.config || {};
+var config = window.config || {};
 
 var Model = Chaplin.Model.extend({
 

@@ -1,9 +1,17 @@
+var ListView = require('views/base/list/view');
+var ListSelectionContextView = require('views/base/list/selection_context_view');
+var SupplierItemView = require('views/supplier/item_view');
 
-var SupplierListView = Chaplin.View.extend({
+var SupplierSelectionContext = ListSelectionContextView.extend({
+  /* TODO: define actions */
+});
 
-  showAll: function() {
-    console.log('show all!');
-  },
+var SupplierListView = ListView.extend({
+
+  template: 'supplier/list.html',
+  noWrap: true,
+  itemView: SupplierItemView,
+  selectionContextView: SupplierSelectionContext,
 
 });
 

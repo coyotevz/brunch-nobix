@@ -1,0 +1,26 @@
+<div class="col s2">
+  <a class="action-back" title="Cancelar selección" rel="tooltip">
+    <i class="mdi-navigation-arrow-back"></i>
+    <span class="action-back-label">Atrás</span>
+  </a>
+</div>
+<div class="col s10">
+  <div class="selection-info-bar col s9">
+    <span class="qty">0</span> seleccionado(s) <a class="change-selection" rel="tooltip" title="Cambiar selección" data-activates="change-selection-dropdown">
+      <i class="mdi-navigation-arrow-drop-down"></i>
+    </a>
+    <ul id="change-selection-dropdown" class="dropdown-content">
+      <li><a id="select-all">Seleccionar todos</a></li>
+      <li><a id="unselect-all">No seleccionar ninguno</a></li>
+    </ul>
+  </div>
+  <div class="toolbox col s3">
+    {% block contexttools %}
+    <a class="icon-toggle" title="Eliminar" rel="tooltip"><i class="mdi-action-delete"></i></a>
+    <a class="icon-toggle" title="Más acciones" rel="tooltip"><i class="mdi-navigation-more-vert"></i></a>
+    {% endblock %}
+  </div>
+</div>
+
+{# vim: ft=jinja:sw=2
+#}

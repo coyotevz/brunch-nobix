@@ -22,7 +22,7 @@ var SupplierController = Controller.extend({
       collection: this.supplierList,
       region: 'main_content',
     });
-    //this.reuse('sidebar').setView(this.view);
+    this.reuse('sidebar').setView(this.view);
   },
 
   show: function(params) {

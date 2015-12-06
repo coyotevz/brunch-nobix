@@ -22,13 +22,13 @@ var Application = Chaplin.Application.extend({
       //{name: 'finances', title: 'Finanzas', icon: 'mdi-action-trending-up'},
     ];
 
-    Application.__super__.initMediator.call(this);
+    Chaplin.Application.prototype.initMediator.call(this);
   },
 
   start: function() {
     var args = [].slice.call(arguments);
     console.log('Start application', args);
-    Application.__super__.start.apply(this, args);
+    Chaplin.Application.prototype.start.apply(this, args);
   }
 });
 

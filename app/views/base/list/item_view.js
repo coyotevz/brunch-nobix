@@ -10,7 +10,7 @@ var ListItemView = View.extend({
   },
 
   render: function() {
-    ListItemView.__super__.render.apply(this, arguments);
+    View.prototype.render.apply(this, arguments);
     this.delegate('change', ':checkbox', this.updateState);
     this.checkbox = this.$(':checkbox')[0];
   },

@@ -26,7 +26,7 @@ var PaginatedCollection = Collection.extend({
 
     options.data = _.defaults(options.data ? options.data : {}, data);
 
-    return PaginatedCollection.__super__.fetch.call(collection, options);
+    return Collection.prototype.fetch.call(collection, options);
   },
 
   parse: function(data) {

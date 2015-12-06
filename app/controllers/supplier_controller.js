@@ -10,7 +10,7 @@ var SupplierController = Controller.extend({
   title: 'Suppliers',
 
   beforeAction: function() {
-    SupplierController.__super__.beforeAction.apply(this, arguments);
+    Controller.prototype.beforeAction.apply(this, arguments);
     this.reuse('sidebar', SupplierSideView);
     this.publishEvent('module:setCurrent', 'suppliers');
   },

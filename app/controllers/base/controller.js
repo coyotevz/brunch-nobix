@@ -4,7 +4,7 @@ var HeaderView = require('views/header_view');
 var Controller = Chaplin.Controller.extend({
 
   beforeAction: function() {
-    Controller.__super__.beforeAction.apply(this, arguments);
+    Chaplin.Controller.prototype.beforeAction.apply(this, arguments);
     this.reuse('root', BaseView, {region: 'root'});
     this.reuse('header', HeaderView, {container: 'header'});
   },

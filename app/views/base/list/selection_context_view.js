@@ -9,7 +9,7 @@ var ListSelectionContextView = View.extend({
   el: 'nav.selection-context',
 
   render: function() {
-    ListSelectionContextView.__super__.render.apply(this, arguments);
+    View.prototype.render.apply(this, arguments);
     this.delegate('click', '.action-back', this.unselectAll);
     this.delegate('click', '#select-all', this.selectAll);
     this.delegate('click', '#unselect-all', this.unselectAll);

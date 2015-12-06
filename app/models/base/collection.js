@@ -8,7 +8,7 @@ var Collection = Chaplin.Collection.extend({
   // Mixin a syncrhonization state machine.
   initialize: function() {
     _.extend(this, Chaplin.SyncMachine);
-    Collection.__super__.initialize.apply(this, arguments);
+    Chaplin.Collection.prototype.initialize.apply(this, arguments);
     this.on('request', this.beginSync);
     this.on('sync', this.finishSync);
     this.on('error', this.unsync);

@@ -10,7 +10,7 @@ var BaseView = View.extend({
   },
 
   initialize: function() {
-    BaseView.__super__.initialize.apply(this, arguments);
+    View.prototype.initialize.apply(this, arguments);
     console.log('BaseView#initialize(%s)', this.cid);
   },
 });

@@ -6,7 +6,7 @@ var ListView = CollectionView.extend({
   selectionContextView: ListSelectionContextView,
 
   initialize: function() {
-    ListView.__super__.initialize.apply(this, arguments);
+    CollectionView.prototype.initialize.apply(this, arguments);
     if (this.selectionContextView) {
       var context = new this.selectionContextView({parent: this});
       this.subview('selection_context', context);
@@ -14,7 +14,7 @@ var ListView = CollectionView.extend({
   },
 
   render: function() {
-    ListView.__super__.render.apply(this, arguments);
+    CollectionView.prototype.render.apply(this, arguments);
     if (!this.$el.hasClass('selectable')) {
       this.$el.addClass('selectable');
     }

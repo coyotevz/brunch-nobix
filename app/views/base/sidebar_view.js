@@ -13,7 +13,7 @@ module.exports = SidebarView = View.extend({
   },
 
   render: function() {
-    SidebarView.__super__.render.apply(this, arguments);
+    View.prototype.render.apply(this, arguments);
     this.delegate('click', 'li.nav-item a', this.onClick);
     // Set first as current
     this.setCurrentMenu(this.$('li.nav-item').first());

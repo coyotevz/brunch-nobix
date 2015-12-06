@@ -6,7 +6,7 @@ var SupplierCollection = PaginatedCollection.extend({
   urlRoot: '/suppliers',
 
   initialize: function() {
-    SupplierCollection.__super__.initialize.apply(this, arguments);
+    PaginatedCollection.prototype.initialize.apply(this, arguments);
     this.fetch();
   },
 

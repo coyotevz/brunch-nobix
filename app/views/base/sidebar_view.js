@@ -1,6 +1,6 @@
 var View = require('views/base/view');
 
-module.exports = SidebarView = View.extend({
+var SidebarView = View.extend({
   optionNames: View.prototype.optionNames.concat(['view']),
   region: 'module_nav',
   template: 'common/sidebar.html',
@@ -16,7 +16,7 @@ module.exports = SidebarView = View.extend({
     View.prototype.render.apply(this, arguments);
     this.delegate('click', 'li.nav-item a', this.onClick);
     // Set first as current
-    this.setCurrentMenu(this.$('li.nav-item').first());
+    //this.setCurrentMenu(this.$('li.nav-item').first());
   },
 
   setView: function(view) {
@@ -24,9 +24,13 @@ module.exports = SidebarView = View.extend({
   },
 
   onClick: function(evt) {
-    var $item = $(evt.target).parents('.nav-item');
+    var $item, select;
+    $item = $(evt.target).parents('.nav-item');
     evt.preventDefault();
-    this.setCurrentMenu($item);
+    select = this.callItemAction($item);
+    if (select) {
+      this.setCurrentMenu($item);
+    }
   },
 
   setCurrentMenu: function($item) {
@@ -36,4 +40,16 @@ module.exports = SidebarView = View.extend({
     }
   },
 
+
+  callItemAction: function($item) {
+    var actionName, action;
+    actionName = _.find(this.menuItems, { name: $item.data('name') }).action;
+    if (actionName !== undefined) {
+      action = this[actionName];
+    }
+    return typeof action === "function" ? action() : void 0;
+  },
+
 });
+
+module.exports = SidebarView;

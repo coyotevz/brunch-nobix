@@ -5,13 +5,14 @@ var EmployeeSideView = SidebarView.extend({
   menuItems: [
     {
       name: 'showall',
-      label: 'Todos',
+      label: 'Ver Todos',
       action: 'showAll',
     },
   ],
 
   showAll: function() {
     console.log('show all!');
+    return true;
   },
 
 });

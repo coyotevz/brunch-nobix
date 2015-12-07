@@ -12,6 +12,7 @@ var SupplierSideView = SidebarView.extend({
 
   showAll: function() {
     console.log('show all!');
+    return true;
   },
 
 });

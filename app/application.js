@@ -18,7 +18,7 @@ var Application = Chaplin.Application.extend({
       //{name: 'purchases', title: 'Compras', icon: 'mdi-action-shopping-cart'},
       {name: 'suppliers', title: 'Proveedores', icon: 'mdi-social-domain'},
       //{name: 'products', title: 'Productos', icon: 'mdi-maps-local-offer'},
-      {name: 'hr', title:'Personal', icon: 'mdi-social-people'},
+      //{name: 'hr', title:'Personal', icon: 'mdi-social-people'},
       //{name: 'finances', title: 'Finanzas', icon: 'mdi-action-trending-up'},
     ];
 

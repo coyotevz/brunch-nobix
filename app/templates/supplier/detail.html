@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="col s9">
-        <span class="card-title">{{ name }}</span>
+        <span class="card-title">{{ name }}<i class="mdi-navigation-more-vert right"></i></span>
         <div class="info-horizontal secondary-info">
           {% if address|length %}{{ render_data('Dirección', address[0]) }}{% endif %}
           {%- if phone|length %}{{ render_data('Teléfono', phone[0].number) }}{% endif -%}

@@ -13,13 +13,13 @@ var Application = Chaplin.Application.extend({
   initMediator: function() {
     // Set available modules
     Chaplin.mediator.modules = [
-      //{name: 'dashboard', title: 'Tablero', icon: 'mdi-action-home'},
-      //{name: 'sales', title: 'Ventas', icon: 'mdi-action-store'},
-      //{name: 'purchases', title: 'Compras', icon: 'mdi-action-shopping-cart'},
-      {name: 'suppliers', title: 'Proveedores', icon: 'mdi-social-domain'},
-      //{name: 'products', title: 'Productos', icon: 'mdi-maps-local-offer'},
-      //{name: 'hr', title:'Personal', icon: 'mdi-social-people'},
-      //{name: 'finances', title: 'Finanzas', icon: 'mdi-action-trending-up'},
+      //{name: 'dashboard', title: 'Tablero', icon: 'dashboard'},
+      //{name: 'sales', title: 'Ventas', icon: 'store'},
+      //{name: 'purchases', title: 'Compras', icon: 'shopping_cart'},
+      {name: 'suppliers', title: 'Proveedores', icon: 'business'},
+      //{name: 'products', title: 'Productos', icon: 'local_offer'},
+      //{name: 'hr', title:'Personal', icon: 'people'},
+      //{name: 'finances', title: 'Finanzas', icon: 'trending_up'},
     ];
 
     Chaplin.Application.prototype.initMediator.call(this);

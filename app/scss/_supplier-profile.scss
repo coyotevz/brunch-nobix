@@ -2,6 +2,15 @@
 
   .supplier-profile-header {
     .card-image { height: 250px; }
+    .card-profile-image {
+      cursor: pointer;
+      left: 40px;
+      margin: 0;
+      position: absolute;
+      top: 195px;
+      width: 110px;
+      z-index: 1;
+    }
     .card-content {
       margin-top: -40px;
       .card-title { margin-bottom: 0px; }

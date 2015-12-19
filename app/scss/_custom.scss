@@ -436,6 +436,10 @@ nav.appbar {
   margin-bottom: 0;
 }
 
+.row .col {
+  padding: 0 12px;
+}
+
 /* Rewrite badge */
 span.badge {
   font-weight: 400;

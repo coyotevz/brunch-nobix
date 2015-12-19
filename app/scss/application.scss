@@ -6,6 +6,7 @@
 @import "variables";
 
 @import "materialize";
+@import "material-icons";
 
 @import "mixins";
 @import "pace";
@@ -15,6 +16,8 @@
 @import "sidenav";
 @import "custom";
 @import "appbar"; /* put after custom, due appbar rule rewrite */
-@import "card";
+//@import "card";
 @import "tooltip";
 @import "modal";
+
+@import "supplier-profile";

@@ -16,10 +16,11 @@
   opacity: 0.8;
   transition: background-color 0.118s ease-out;
 
-  i {
+  i.material-icons {
     width: inherit;
     display: inline-block;
     line-height: $button-floating-size;
+    height: $button-floating-size;
     font-size: 1.6rem;
   }
 

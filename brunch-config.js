@@ -21,7 +21,8 @@ exports.config = {
           'vendor/scripts/materialize/hammer.min.js',
           'vendor/scripts/materialize/jquery.hammer.js',
           'vendor/scripts/materialize/dropdown.js',
-          'vendor/scripts/materialize/sideNav.js'
+          'vendor/scripts/materialize/sideNav.js',
+          'vendor/scripts/materialize/cards.js'
         ]
       }
     },

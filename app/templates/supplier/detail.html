@@ -22,7 +22,7 @@
             <p class="medium-small grey-text">Marcas</p>
           </div>
           <div class="col s2 center-align">
-            <h4 class="card-title grey-text text-darken-4">{{ payment_term }} días</h4>
+            <h4 class="card-title grey-text text-darken-4">{% if payment_term %}{{ payment_term }} días{% else %}&mdash;{% endif %}</h4>
             <p class="medium-small grey-text">Forma de Pago</p>
           </div>
           <div class="col s2 center-align">
@@ -59,35 +59,94 @@
     </div>
   </div>
 
-  <div class="col s12 m6">
-    <div class="card">
-      <div class="card-header row">
-        <div class="col s3">
-          <div class="iconimg">
-            <img class="circle responsive-img" src="image/factory.png">
-          </div>
-        </div>
-        <div class="col s9">
-          <span class="card-title">{{ name }}<i class="material-icons right">more_vert</i></span>
-          <div class="info-horizontal secondary-info">
-            {% if address|length %}{{ render_data('Dirección', address[0]) }}{% endif %}
-            {%- if phone|length %}{{ render_data('Teléfono', phone[0].number) }}{% endif -%}
-            {% if email|length %}
-            <div class="info-row">
-              <span class="info-label light">E-mail</span>
-              <span class="info-data"><a href="mailto:{{ email }}">{{ email }}</a></span>
+  <div class="col s6">
+    <ul id="supplier-orders" class="collection with-header">
+      <li class="collection-header cyan white-text">
+        <h4 class="supplier-orders-title" style="font-weight: 300">Últimos Pedidos</h4>
+        <p class="supplier-orders-date">Diciembre, 2015</p>
+      </li>
+      <li class="collection-item dismissable">
+        <input id="po1" type="checkbox">
+        <label for="po1">
+          Orden de Pedido N° 1
+          <a class="secondary-content" href="#"><span class="ultra-small">Today</span></a>
+          <span class="po-cat teal">Pendiente</span>
+        </label>
+      </li>
+      <!--
+      <li class="collection-item dismissable">
+        <input id="po2" type="checkbox">
+        <label for="po2"></label>
+      </li>
+      -->
+      <!--
+      <li class="collection-item dismissable">
+        <input id="po3" type="checkbox">
+        <label for="po3"></label>
+      </li>
+      -->
+    </ul>
+  </div>
+
+  <div class="col s6">
+    <ul id="supplier-orders" class="collection with-header">
+      <li class="collection-header amber darken-2 white-text">
+        <h4 class="supplier-orders-title" style="font-weight: 300">Últimas Facturas</h4>
+        <p class="supplier-orders-date">Diciembre, 2015</p>
+      </li>
+      <li class="collection-item dismissable">
+        <input id="invoice1" type="checkbox">
+        <label for="invoice1">
+          Factura N° 1
+          <a class="secondary-content" href="#"><span class="ultra-small">Today</span></a>
+          <span class="po-cat teal">Pendiente</span>
+        </label>
+      </li>
+      <!--
+      <li class="collection-item dismissable">
+        <input id="po2" type="checkbox">
+        <label for="po2"></label>
+      </li>
+      -->
+      <!--
+      <li class="collection-item dismissable">
+        <input id="po3" type="checkbox">
+        <label for="po3"></label>
+      </li>
+      -->
+    </ul>
+  </div>
+  <!--
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-header row">
+          <div class="col s3">
+            <div class="iconimg">
+              <img class="circle responsive-img" src="image/factory.png">
             </div>
-            {% endif %}
-            {% if payment_term %}{{ render_data('Forma de Pago', payment_term) }}{% endif %}
-            {% if fiscal_data %}{{ render_data('CUIT', fiscal_data.cuit) }}{% endif %}
+          </div>
+          <div class="col s9">
+            <span class="card-title">{{ name }}<i class="material-icons right">more_vert</i></span>
+            <div class="info-horizontal secondary-info">
+              {% if address|length %}{{ render_data('Dirección', address[0]) }}{% endif %}
+              {%- if phone|length %}{{ render_data('Teléfono', phone[0].number) }}{% endif -%}
+              {% if email|length %}
+              <div class="info-row">
+                <span class="info-label light">E-mail</span>
+                <span class="info-data"><a href="mailto:{{ email }}">{{ email }}</a></span>
+              </div>
+              {% endif %}
+              {% if payment_term %}{{ render_data('Forma de Pago', payment_term) }}{% endif %}
+              {% if fiscal_data %}{{ render_data('CUIT', fiscal_data.cuit) }}{% endif %}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-body">
-        <p>Card body</p>
+        <div class="card-body">
+          <p>Card body</p>
+        </div>
       </div>
     </div>
-  </div>
+  -->
 </div>
 
 {# vim: ft=htmljinja:sw=2

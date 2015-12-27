@@ -35,10 +35,10 @@
     opacity: 1;
   }
 
-  &:active {
-    opacity: 1;
-    background-color: rgba(0,0,0,0.1);
-  }
+  //&:active {
+  //  opacity: 1;
+  //  background-color: rgba(0,0,0,0.1);
+  //}
 
   &.flat:active {
     background-color: transparent;

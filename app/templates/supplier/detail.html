@@ -1,8 +1,8 @@
 {% macro render_data(label, data) -%}
-<div class="info-row">
-  <span class="info-label light">{{ label }}</span>
-  <span class="info-data">{{ data }}</span>
-</div>
+  <div class="info-row">
+    <span class="info-label light">{{ label }}</span>
+    <span class="info-data">{{ data }}</span>
+  </div>
 {%- endmacro %}
 
 <div class="supplier-profile">
@@ -22,131 +22,135 @@
             <p class="medium-small grey-text">Marcas</p>
           </div>
           <div class="col s2 center-align">
-            <h4 class="card-title grey-text text-darken-4">{% if payment_term %}{{ payment_term }} días{% else %}&mdash;{% endif %}</h4>
-            <p class="medium-small grey-text">Forma de Pago</p>
-          </div>
-          <div class="col s2 center-align">
-            <h4 class="card-title grey-text text-darken-4">420</h4>
-            <p class="medium-small grey-text">Productos activos</p>
-          </div>
-          <div class="col s2 center-align">
-            <h4 class="card-title grey-text text-darken-4">$ 5.680,45</h4>
-            <p class="medium-small grey-text">Comprados</p>
-          </div>
-          <div class="col s1 right-align">
-            <a class="btn-floating activator waves-effect waves-light blue-grey darken-1 right">
-              <i class="material-icons">keyboard_arrow_up</i>
-            </a>
-          </div>
+          <h4 class="card-title grey-text text-darken-4">{% if payment_term %}{{ payment_term }} días{% else %}&mdash;{% endif %}</h4>
+          <p class="medium-small grey-text">Forma de Pago</p>
         </div>
-      </div>
-
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">{{ name }}<i class="material-icons right">close</i></span>
-        <div class="row">
-          <div class="col m4">
-            <p>Av. Congreso 358 - CABA<br><span class="grey-text">Domicilio</span></p>
-          </div>
-          <div class="col m4">
-            <p>30-71128142-4<br><span class="grey-text">CUIT</span></p>
-          </div>
-          <div class="col m4">
-            <p>ventas@ferrumsa.com.ar<br><span class="grey-text">e-mail</span></p>
-          </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">420</h4>
+          <p class="medium-small grey-text">Productos activos</p>
         </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="col s6">
-    <ul id="supplier-orders" class="collection with-header">
-      <li class="collection-header cyan white-text">
-        <h4 class="collection-title" >Últimos Pedidos</h4>
-        <p class="collection-subtitle date">Diciembre, 2015</p>
-      </li>
-      <li class="collection-item dismissable">
-        <input id="po1" type="checkbox">
-        <label for="po1">
-          Orden de Pedido N° 1
-          <a class="secondary-content" href="#"><span class="ultra-small">Today</span></a>
-          <span class="po-cat teal">Pendiente</span>
-        </label>
-      </li>
-      <!--
-      <li class="collection-item dismissable">
-        <input id="po2" type="checkbox">
-        <label for="po2"></label>
-      </li>
-      -->
-      <!--
-      <li class="collection-item dismissable">
-        <input id="po3" type="checkbox">
-        <label for="po3"></label>
-      </li>
-      -->
-    </ul>
-  </div>
-
-  <div class="col s6">
-    <ul id="supplier-orders" class="collection with-header">
-      <li class="collection-header amber darken-2 white-text">
-        <h4 class="collection-title">Últimas Facturas</h4>
-        <p class="collection-subtitle date">Diciembre, 2015</p>
-      </li>
-      <li class="collection-item dismissable">
-        <input id="invoice1" type="checkbox">
-        <label for="invoice1">
-          Factura N° 1
-          <a class="secondary-content" href="#"><span class="ultra-small">Today</span></a>
-          <span class="po-cat teal">Pendiente</span>
-        </label>
-      </li>
-      <!--
-      <li class="collection-item dismissable">
-        <input id="po2" type="checkbox">
-        <label for="po2"></label>
-      </li>
-      -->
-      <!--
-      <li class="collection-item dismissable">
-        <input id="po3" type="checkbox">
-        <label for="po3"></label>
-      </li>
-      -->
-    </ul>
-  </div>
-  <!--
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-header row">
-          <div class="col s3">
-            <div class="iconimg">
-              <img class="circle responsive-img" src="image/factory.png">
-            </div>
-          </div>
-          <div class="col s9">
-            <span class="card-title">{{ name }}<i class="material-icons right">more_vert</i></span>
-            <div class="info-horizontal secondary-info">
-              {% if address|length %}{{ render_data('Dirección', address[0]) }}{% endif %}
-              {%- if phone|length %}{{ render_data('Teléfono', phone[0].number) }}{% endif -%}
-              {% if email|length %}
-              <div class="info-row">
-                <span class="info-label light">E-mail</span>
-                <span class="info-data"><a href="mailto:{{ email }}">{{ email }}</a></span>
-              </div>
-              {% endif %}
-              {% if payment_term %}{{ render_data('Forma de Pago', payment_term) }}{% endif %}
-              {% if fiscal_data %}{{ render_data('CUIT', fiscal_data.cuit) }}{% endif %}
-            </div>
-          </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">$ 5.680,45</h4>
+          <p class="medium-small grey-text">Comprados</p>
         </div>
-        <div class="card-body">
-          <p>Card body</p>
+        <div class="col s1 right-align">
+          <a class="btn-floating activator waves-effect waves-light blue-grey darken-1 right">
+            <i class="material-icons">keyboard_arrow_up</i>
+          </a>
         </div>
       </div>
     </div>
-  -->
+
+    <div class="card-reveal">
+      <div class="row card-title grey-text text-darken-4">
+        <span class="supplier-name">{{ name }}</span>
+        <i class="material-icons action-edit left">edit</i>
+        <i class="material-icons action-close right">close</i>
+      </div>
+      <div class="row">
+        <div class="col m4">
+          <p>Av. Congreso 358 - CABA<br><span class="grey-text">Domicilio</span></p>
+        </div>
+        <div class="col m4">
+          <p>30-71128142-4<br><span class="grey-text">CUIT</span></p>
+        </div>
+        <div class="col m4">
+          <p>ventas@ferrumsa.com.ar<br><span class="grey-text">e-mail</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="col s6">
+  <ul id="supplier-orders" class="collection with-header">
+    <li class="collection-header cyan white-text">
+      <h4 class="collection-title" >Últimos Pedidos</h4>
+      <p class="collection-subtitle date">Diciembre, 2015</p>
+    </li>
+    <li class="collection-item dismissable">
+      <input id="po1" type="checkbox">
+      <label for="po1">
+        Orden de Pedido N° 1
+        <a class="secondary-content" href="#"><span class="ultra-small">Today</span></a>
+        <span class="po-cat teal">Pendiente</span>
+      </label>
+    </li>
+    <!--
+    <li class="collection-item dismissable">
+      <input id="po2" type="checkbox">
+      <label for="po2"></label>
+    </li>
+    -->
+    <!--
+    <li class="collection-item dismissable">
+      <input id="po3" type="checkbox">
+      <label for="po3"></label>
+    </li>
+    -->
+  </ul>
+</div>
+
+<div class="col s6">
+  <ul id="supplier-orders" class="collection with-header">
+    <li class="collection-header amber darken-2 white-text">
+      <h4 class="collection-title">Últimas Facturas</h4>
+      <p class="collection-subtitle date">Diciembre, 2015</p>
+    </li>
+    <li class="collection-item dismissable">
+      <input id="invoice1" type="checkbox">
+      <label for="invoice1">
+        Factura N° 1
+        <a class="secondary-content" href="#"><span class="ultra-small">Today</span></a>
+        <span class="po-cat teal">Pendiente</span>
+      </label>
+    </li>
+    <!--
+    <li class="collection-item dismissable">
+      <input id="po2" type="checkbox">
+      <label for="po2"></label>
+    </li>
+    -->
+    <!--
+    <li class="collection-item dismissable">
+      <input id="po3" type="checkbox">
+      <label for="po3"></label>
+    </li>
+    -->
+  </ul>
+</div>
+<!--
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-header row">
+      <div class="col s3">
+        <div class="iconimg">
+          <img class="circle responsive-img" src="image/factory.png">
+        </div>
+      </div>
+      <div class="col s9">
+        <span class="card-title">{{ name }}<i class="material-icons right">more_vert</i></span>
+        <div class="info-horizontal secondary-info">
+          {% if address|length %}{{ render_data('Dirección', address[0]) }}{% endif %}
+        {%- if phone|length %}{{ render_data('Teléfono', phone[0].number) }}{% endif -%}
+        {% if email|length %}
+          <div class="info-row">
+            <span class="info-label light">E-mail</span>
+            <span class="info-data"><a href="mailto:{{ email }}">{{ email }}</a></span>
+          </div>
+        {% endif %}
+        {% if payment_term %}{{ render_data('Forma de Pago', payment_term) }}{% endif %}
+        {% if fiscal_data %}{{ render_data('CUIT', fiscal_data.cuit) }}{% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p>Card body</p>
+  </div>
+</div>
+</div>
+-->
 </div>
 
 {# vim: ft=htmljinja:sw=2

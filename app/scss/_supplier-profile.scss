@@ -15,6 +15,24 @@
       margin-top: -40px;
       .card-title { margin-bottom: 0px; }
     }
+
+    .card-reveal {
+      .card-title {
+        .supplier-name {
+          float: left;
+        }
+        .action-edit {
+          font-size: 20px;
+          margin-left: 10px;
+          line-height: 36px;
+          @extend .grey-text.text-lighten-2;
+
+          &:hover {
+            @extend .grey-text.text-darken-2;
+          }
+        }
+      }
+    }
   }
 
 }

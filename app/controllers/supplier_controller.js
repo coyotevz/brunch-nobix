@@ -4,6 +4,7 @@ var SupplierCollection = require('models/supplier_collection');
 var SupplierSideView = require('views/supplier/side_view');
 var SupplierListView = require('views/supplier/list_view');
 var SupplierDetailView = require('views/supplier/detail_view');
+var DialogView = require('views/dialog');
 
 var SupplierController = Controller.extend({
 
@@ -12,6 +13,7 @@ var SupplierController = Controller.extend({
   beforeAction: function() {
     Controller.prototype.beforeAction.apply(this, arguments);
     this.reuse('sidebar', SupplierSideView);
+    this.reuse('dialog', DialogView, { region: 'root' });
     this.publishEvent('module:setCurrent', 'suppliers');
   },
 

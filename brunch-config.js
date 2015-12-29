@@ -23,7 +23,8 @@ exports.config = {
           'vendor/scripts/materialize/dropdown.js',
           'vendor/scripts/materialize/waves.js',
           'vendor/scripts/materialize/sideNav.js',
-          'vendor/scripts/materialize/cards.js'
+          'vendor/scripts/materialize/cards.js',
+          'vendor/scripts/bootstrap/modal.js',
         ]
       }
     },

@@ -1,4 +1,5 @@
 var View = require('views/base/view');
+var Dialog = require('views/dialog');
 
 var SupplierDetailView = View.extend({
   autoRender: false,
@@ -15,7 +16,12 @@ var SupplierDetailView = View.extend({
 
   edit: function(evt) {
     evt.stopPropagation();
-    console.log('#edit:', arguments);
+    //var dialog = new Dialog();
+    console.log('#edit:', _dialog);
+    _dialog.run({
+      title: 'Some title',
+      text: 'Hello, we are in dialog paragraph.',
+    });
   }
 });
 

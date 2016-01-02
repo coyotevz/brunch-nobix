@@ -29,46 +29,35 @@ var DialogContentView = View.extend({
 });
 
 var DialogView = View.extend({
-  //autoRender: false,
   template: 'common/dialog.html',
-  noWrap: true,
+  container: 'body',
 
   events: {
     'click [name=modal-close]': 'close',
   },
 
   render: function() {
-    console.log('Dialog#render()');
     View.prototype.render.apply(this, arguments);
-    this.delegate('shown.bs.modal', function() {
-      this.subview('modal-content').trigger('show');
-      $(window).on("resize.myDialog",
-                   _.debounce(_.bind(this.reposition, this), 200));
-    });
-    this.delegate('shown.bs.modal', this.reposition);
 
-    this.delegate('hidden.bs.modal', function() {
-      this.subview('modal-content').trigger('hide');
-      $(window).off("resize.myDialog");
-    });
-
+    // initialize backbone modal plugin
     this.$el.modal({
       show: false,
     });
 
+    // grab for future use
     this.$d = this.$('.modal-dialog');
 
-    // Grab global copy of this instance
-    window._dialog = this;
-  },
-
-  reposition: function() {
-    this.subview('modal-content').trigger('beforeReposition');
-    this.$d.css({
-      'left': ($(window).width() - this.$d.width()) / 2,
-      'top': ($(window).height() - this.$d.height()) / 2,
+    this.delegate('shown.bs.modal', function() {
+      this.subview('modal-content').trigger('show');
+      this.reposition();
+      $(window).on("resize.nbsDialog",
+                   _.debounce(_.bind(this.reposition, this), 200));
     });
-    this.subview('modal-content').trigger('afterReposition');
+
+    this.delegate('hidden.bs.modal', function() {
+      this.subview('modal-content').trigger('hide');
+      $(window).off("resize.nbsDialog");
+    });
   },
 
   show: function() {
@@ -81,11 +70,16 @@ var DialogView = View.extend({
 
   close: function() {
     this.$el.modal('hide');
-    this.removeSubview('modal-content');
+    _.delay(_.bind(this.dispose, this), 500);
   },
 
-  toggle: function() {
-    this.$el.modal('toggle');
+  reposition: function() {
+    this.subview('modal-content').trigger('beforeReposition');
+    this.$d.css({
+      'left': ($(window).width() - this.$d.width()) / 2,
+      'top': ($(window).height() - this.$d.height()) / 2,
+    });
+    this.subview('modal-content').trigger('afterReposition');
   },
 
   /* API Details:
@@ -110,18 +104,17 @@ var DialogView = View.extend({
    */
 
   run: function(options) {
-    var defaults = {
+    var ContentView = options.view || DialogContentView;
+    delete options.view;
+
+    options = _.extend({
       className: 'modal-content',
       container: this.$d,
       dialog: this,
-
       title: null,
       text: null,
       buttons: {},
-    };
-    var ContentView = options.view || DialogContentView;
-    delete options.view;
-    options = _.extend(defaults, options);
+    }, options);
 
     this.subview('modal-content', new ContentView(options));
     this.show();

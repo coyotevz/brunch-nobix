@@ -16,9 +16,8 @@ var SupplierDetailView = View.extend({
 
   edit: function(evt) {
     evt.stopPropagation();
-    //var dialog = new Dialog();
-    console.log('#edit:', _dialog);
-    _dialog.run({
+    var dialog = new Dialog();
+    dialog.run({
       title: 'Some title',
       text: 'Hello, we are in dialog paragraph.',
     });

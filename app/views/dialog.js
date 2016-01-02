@@ -76,8 +76,8 @@ var DialogView = View.extend({
   reposition: function() {
     this.subview('modal-content').trigger('beforeReposition');
     this.$d.css({
-      'left': ($(window).width() - this.$d.width()) / 2,
-      'top': ($(window).height() - this.$d.height()) / 2,
+      'transform': 'translateY(' + ($(window).height() - this.$d.height())/2 + 'px)',
+
     });
     this.subview('modal-content').trigger('afterReposition');
   },

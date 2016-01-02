@@ -8,6 +8,14 @@ var SupplierDetailView = View.extend({
   initialize: function () {
     View.prototype.initialize.apply(this, arguments);
     this.delegate('click', '.action-edit', this.edit);
+
+    // TODO Only for develop dialog style, remove please
+    var dialog = new Dialog();
+    dialog.run({
+      title: 'Some title',
+      text: 'Hello, we are in dialog paragraph.',
+    });
+
   },
 
   listen: {

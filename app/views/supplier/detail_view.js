@@ -14,6 +14,22 @@ var SupplierDetailView = View.extend({
     dialog.run({
       title: 'Some title',
       text: 'Hello, we are in dialog paragraph.',
+      buttons: {
+        'success': {
+          'label': 'OK',
+          'action': function(dialog, evt) {
+            console.log('OK');
+            dialog.close();
+          }
+        },
+        'cancel': {
+          'label': 'Cancel',
+          'action': function(dialog, evt) {
+            console.log('Cancel');
+            dialog.close();
+          }
+        }
+      }
     });
 
   },
@@ -28,6 +44,20 @@ var SupplierDetailView = View.extend({
     dialog.run({
       title: 'Some title',
       text: 'Hello, we are in dialog paragraph.',
+      buttons: {
+        'success': {
+          'label': 'OK',
+          'action': function(dialog, evt) {
+            console.log('OK');
+          }
+        },
+        'cancel': {
+          'label': 'Cancel',
+          'action': function(dialog, evt) {
+            console.log('Cancel');
+          }
+        }
+      }
     });
   }
 });

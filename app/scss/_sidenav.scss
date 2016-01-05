@@ -8,11 +8,11 @@
   width: calc(16.667% + 0.75rem);
   position: fixed;
 
-  li { 
+  li {
     a {
       display: block;
       line-height: 44px;
-      height: 44px; 
+      height: 44px;
       @extend .truncate;
       i {
         font-weight: normal;

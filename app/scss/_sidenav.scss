@@ -1,19 +1,19 @@
 
 .side-nav {
-  z-index: 450;
-  position: absolute;
-  top: 56px;
-  bottom: 0px;
+  bottom: 0;
   height: calc(100% - 56px);
-  width: calc(16.667% + 0.75rem);
   position: fixed;
+  top: 56px;
+  width: calc(16.667% + .75rem);
+  z-index: 450;
 
-  li { 
+  li {
     a {
-      display: block;
-      line-height: 44px;
-      height: 44px; 
       @extend .truncate;
+      display: block;
+      height: 44px;
+      line-height: 44px;
+
       i {
         font-weight: normal;
         display: inline-block;
@@ -29,11 +29,13 @@
         line-height: normal;
       }
     }
+
     &.active {
       background-color: #e1e1e1;
     }
+
     &:hover {
-      background-color: rgba(0,0,0,0.03);
+      background-color: rgba(0, 0, 0, .03);
     }
   }
 }

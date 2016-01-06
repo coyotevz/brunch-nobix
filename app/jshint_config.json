@@ -1,11 +1,12 @@
 {
     "bitwise": true,
+    "curly": true,
     "unused": true,
     "undef": true,
     "eqeqeq": true,
     "newcap": true,
     "nonew": true,
-    "strict": false,
+    "strict": "global",
 
     // Environments
     "browser": true,

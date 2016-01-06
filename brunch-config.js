@@ -62,7 +62,14 @@ exports.config = {
         curly: true,
         undef: true,
         unused: true,
+        eqeqeq: true,
+        newcap: true,
+        nonew: true,
         strict: "global",
+
+        browser: true,
+        devel: true,
+        jquery: true,
       },
       globals: {
         jQuery: true,

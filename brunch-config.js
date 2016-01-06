@@ -1,10 +1,10 @@
 var backslashRe = new RegExp('\\\\', 'g');
-var dotRe = new RegExp('^(\.\.\/)*', 'g');
+var dotRe = new RegExp('^(..\/)*', 'g');
 var wrapperRe = /\.\w+$/;
 
 var cleanModuleName = function(path, nameCleaner) {
   return nameCleaner(path.replace(backslashRe, '/').replace(dotRe, ''));
-}
+};
 
 exports.config = {
   files: {
@@ -50,7 +50,7 @@ exports.config = {
       return {
         prefix: "require.register(" + path + ", function(exports, require, module) {\n",
         suffix: '});\n\n',
-      }
+      };
     }
   },
 

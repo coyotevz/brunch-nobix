@@ -1,0 +1,17 @@
+
+.btn, .btn-flat {
+  font-weight: 500;
+}
+
+.btn-flat {
+  &:hover, &:focus:hover {
+    background-color: rgba(153,153,153,0.2);
+  }
+  &:focus { background-color: transparent; }
+}
+
+.modal-footer {
+  .btn-flat {
+    min-width: 88px;
+  }
+}

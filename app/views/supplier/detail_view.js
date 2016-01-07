@@ -24,6 +24,7 @@ var SupplierDetailView = View.extend({
         },
         'cancel': {
           'label': 'Cancel',
+          'style': 'btn-flat red-text',
           'action': function(dialog, evt) {
             console.log('Cancel');
             dialog.close();
@@ -47,6 +48,7 @@ var SupplierDetailView = View.extend({
       buttons: {
         'success': {
           'label': 'OK',
+          'style': 'btn-flat blue-text',
           'action': function(dialog, evt) {
             console.log('OK');
           }

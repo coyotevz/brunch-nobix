@@ -30,7 +30,7 @@ var SupplierController = Controller.extend({
     model.fetch();
     this.view = new SupplierDetailView({
       region: 'main_content',
-      model: model
+      model: model,
     });
   },
 

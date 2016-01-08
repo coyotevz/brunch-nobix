@@ -1,3 +1,4 @@
+/* global $ _ */
 var View = require('views/base/view');
 
 var SidebarView = View.extend({
@@ -47,7 +48,7 @@ var SidebarView = View.extend({
     if (actionName !== undefined) {
       action = this[actionName];
     }
-    return typeof action === "function" ? action() : void 0;
+    return typeof action === 'function' ? action() : void 0;
   },
 
 });

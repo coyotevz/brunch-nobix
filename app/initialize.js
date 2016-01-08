@@ -1,3 +1,5 @@
+/* global $ Pace Chaplin */
+
 var Application = require('application');
 var routes = require('routes');
 
@@ -14,7 +16,7 @@ $(function() {
   });
 
   // Cross domain CORS support for backbone.js
-  $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+  $.ajaxPrefilter(function(options, u_originalOptions, u_jqXHR) {
     options.crossDomain = true;
     options.xhrFields = {
       withCredentials: true,

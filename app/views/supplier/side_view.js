@@ -7,7 +7,7 @@ var SupplierSideView = SidebarView.extend({
       name: 'showall',
       label: 'Ver Todos',
       action: 'showAll',
-    }
+    },
   ],
 
   showAll: function() {

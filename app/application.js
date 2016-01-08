@@ -1,3 +1,5 @@
+/* global Chaplin */
+
 var Layout = require('views/layout');
 
 // The application object.
@@ -13,13 +15,13 @@ var Application = Chaplin.Application.extend({
   initMediator: function() {
     // Set available modules
     Chaplin.mediator.modules = [
-      //{name: 'dashboard', title: 'Tablero', icon: 'dashboard'},
-      //{name: 'sales', title: 'Ventas', icon: 'store'},
-      //{name: 'purchases', title: 'Compras', icon: 'shopping_cart'},
-      {name: 'suppliers', title: 'Proveedores', icon: 'business'},
-      //{name: 'products', title: 'Productos', icon: 'local_offer'},
-      //{name: 'hr', title:'Personal', icon: 'people'},
-      //{name: 'finances', title: 'Finanzas', icon: 'trending_up'},
+      // {name: 'dashboard', title: 'Tablero', icon: 'dashboard'},
+      // {name: 'sales', title: 'Ventas', icon: 'store'},
+      // {name: 'purchases', title: 'Compras', icon: 'shopping_cart'},
+      { name: 'suppliers', title: 'Proveedores', icon: 'business' },
+      // {name: 'products', title: 'Productos', icon: 'local_offer'},
+      // {name: 'hr', title:'Personal', icon: 'people'},
+      // {name: 'finances', title: 'Finanzas', icon: 'trending_up'},
     ];
 
     Chaplin.Application.prototype.initMediator.call(this);

@@ -1,3 +1,4 @@
+/* global _ */
 var Collection = require('./collection');
 
 var PaginatedCollection = Collection.extend({
@@ -12,14 +13,15 @@ var PaginatedCollection = Collection.extend({
   },
 
   fetch: function(options) {
-    var collection = this,
-        data = {};
+    var collection = this;
+    var data = {};
 
     options = options ? _.clone(options) : {};
     options.increase = options.increase ? options.increase : false;
 
     if (options.increase) {
-      data.page = !this.page ? undefined : this.page < this.num_pages ? this.page + 1 : undefined;
+      data.page = !this.page ? undefined :
+        this.page < this.num_pages ? this.page + 1 : undefined;
     } else {
       data.page = !this.page ? undefined : this.page;
     }
@@ -36,9 +38,9 @@ var PaginatedCollection = Collection.extend({
     this.num_pages = data.num_pages || 1;
     this.page = data.page || 1;
     if (this.num_results < this.models.length + objects.length) {
-      this.trigger("pagination", "load");
+      this.trigger('pagination', 'load');
     } else {
-      this.trigger("pagination", "complete");
+      this.trigger('pagination', 'complete');
     }
     return objects;
   },

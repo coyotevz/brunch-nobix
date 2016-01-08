@@ -1,3 +1,4 @@
+/* global Chaplin _ $ */
 var View = require('views/base/view');
 
 var HeaderView = View.extend({
@@ -8,7 +9,7 @@ var HeaderView = View.extend({
 
   listen: {
     'pace:hide mediator': 'setupView',
-    'module:setCurrent mediator': 'setCurrentModule'
+    'module:setCurrent mediator': 'setCurrentModule',
   },
 
   getTemplateData: function() {
@@ -33,22 +34,22 @@ var HeaderView = View.extend({
   },
 
   setupView: function() {
-    this.$('.button-collapse').on("click", function() {
+    this.$('.button-collapse').on('click', function() {
       $(this).tooltip('hide');
     }).sideNav({
-      closeOnClick: true
+      closeOnClick: true,
     });
 
 
     // TODO: This needs more work
-    this.$('.searchbox').on("click", function() {
-      $('.search-input input', this).trigger("focus");
+    this.$('.searchbox').on('click', function() {
+      $('.search-input input', this).trigger('focus');
     });
     this.$('.search-input input')
-    .on("focusin", function() {
+    .on('focusin', function() {
       $('.appbar').addClass('on-search');
     })
-    .on("focusout", function() {
+    .on('focusout', function() {
       $('.appbar.on-search').removeClass('on-search');
     });
   },

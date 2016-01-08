@@ -1,3 +1,4 @@
+/* global Chaplin nunjucks _ */
 
 var View = Chaplin.View.extend({
   noWrap: true,
@@ -5,25 +6,25 @@ var View = Chaplin.View.extend({
 
   getTemplateFunction: function(tmpl_attr) {
     tmpl_attr = tmpl_attr || 'template';
-    var template = this[tmpl_attr],
-        templateFunc = null;
+    var template = this[tmpl_attr];
+    var templateFunc = null;
 
-      if (typeof template === 'string') {
-        var env = new nunjucks.Environment();
-        var tmpl = env.getTemplate(template);
-        templateFunc = function(ctx) {
-          return _.trim(tmpl.render(ctx));
-        };
-        this.constructor.prototype[tmpl_attr] = templateFunc;
-      } else {
-        templateFunc = template;
-      }
+    if (typeof template === 'string') {
+      var env = new nunjucks.Environment();
+      var tmpl = env.getTemplate(template);
+      templateFunc = function(ctx) {
+        return _.trim(tmpl.render(ctx));
+      };
+      this.constructor.prototype[tmpl_attr] = templateFunc;
+    } else {
+      templateFunc = template;
+    }
 
-      return templateFunc;
+    return templateFunc;
   },
 
   /* method borrowed from controller, this lets reuse views from views */
-  reuse: function(name) {
+  reuse: function() {
     var method = arguments.length === 1 ? 'retrieve' : 'compose';
     return Chaplin.mediator.execute.apply(Chaplin.mediator, ['composer:'+method].concat([].slice.call(arguments)));
   },

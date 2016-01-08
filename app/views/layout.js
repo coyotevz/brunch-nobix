@@ -1,3 +1,4 @@
+/* global Chaplin $ */
 
 var Layout = Chaplin.Layout.extend({
 
@@ -8,16 +9,16 @@ var Layout = Chaplin.Layout.extend({
   },
 
   regions: {
-    'root': '',
+    root: '',
   },
 
-  on_dispatch: function(controller, params, route) {
+  on_dispatch: function(u_controller, u_params, u_route) {
     console.log('dispatcher:dispatch event');
     this.$('[rel="tooltip"]').tooltip({
       placement: 'bottom',
       delay: { show: 400, hide: 0},
     });
-    $(document).bind('click.out-tooltip', function(e) {
+    $(document).bind('click.out-tooltip', function(u_e) {
       $('[rel="tooltip"]').tooltip('hide');
     });
   },

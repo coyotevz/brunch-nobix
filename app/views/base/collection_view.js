@@ -1,3 +1,4 @@
+/* global Chaplin */
 var View = require('views/base/view');
 
 var CollectionView = Chaplin.CollectionView.extend({

@@ -17,20 +17,20 @@ var SupplierDetailView = View.extend({
       buttons: {
         'success': {
           'label': 'OK',
-          'action': function(dialog, evt) {
+          'action': function(dialog, u_evt) {
             console.log('OK');
             dialog.close();
-          }
+          },
         },
         'cancel': {
           'label': 'Cancel',
           'style': 'btn-flat red-text',
-          'action': function(dialog, evt) {
+          'action': function(dialog, u_evt) {
             console.log('Cancel');
             dialog.close();
-          }
-        }
-      }
+          },
+        },
+      },
     });
 
   },
@@ -49,19 +49,19 @@ var SupplierDetailView = View.extend({
         'success': {
           'label': 'OK',
           'style': 'btn-flat blue-text',
-          'action': function(dialog, evt) {
+          'action': function(u_dialog, u_evt) {
             console.log('OK');
-          }
+          },
         },
         'cancel': {
           'label': 'Cancel',
-          'action': function(dialog, evt) {
+          'action': function(u_dialog, u_evt) {
             console.log('Cancel');
-          }
-        }
-      }
+          },
+        },
+      },
     });
-  }
+  },
 });
 
 module.exports = SupplierDetailView;

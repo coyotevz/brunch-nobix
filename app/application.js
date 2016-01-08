@@ -29,7 +29,7 @@ var Application = Chaplin.Application.extend({
     var args = [].slice.call(arguments);
     console.log('Start application', args);
     Chaplin.Application.prototype.start.apply(this, args);
-  }
+  },
 });
 
 module.exports = Application;

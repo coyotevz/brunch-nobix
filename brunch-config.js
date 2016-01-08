@@ -11,7 +11,7 @@ exports.config = {
     javascripts: {
       joinTo: {
         'js/app.js': /^app/,
-        'js/vendor.js': /^(?!app)/
+        'js/vendor.js': /^(?!app)/,
       },
       order: {
         before: [
@@ -25,19 +25,19 @@ exports.config = {
           'vendor/scripts/materialize/sideNav.js',
           'vendor/scripts/materialize/cards.js',
           'vendor/scripts/bootstrap/modal.js',
-        ]
-      }
+        ],
+      },
     },
     stylesheets: {
       joinTo: 'css/app.css',
       order: {
         before: ['bower_components/normalize-css/normalize.css'],
-        after: ['bower_components/h5bp-helpers/helpers.css']
-      }
+        after: ['bower_components/h5bp-helpers/helpers.css'],
+      },
     },
     templates: {
-      joinTo: 'js/app.js'
-    }
+      joinTo: 'js/app.js',
+    },
   },
 
   modules: {
@@ -48,10 +48,10 @@ exports.config = {
       var moduleName = cleanModuleName(path, exports.config.modules.nameCleaner).replace(wrapperRe, '');
       path = JSON.stringify(moduleName);
       return {
-        prefix: "require.register(" + path + ", function(exports, require, module) {\n",
+        prefix: 'require.register(' + path + ', function(exports, require, module) {\n',
         suffix: '});\n\n',
       };
-    }
+    },
   },
 
   plugins: {
@@ -62,22 +62,18 @@ exports.config = {
         curly: true,
         undef: true,
         unused: true,
-        strict: "global",
+        strict: 'global',
       },
       globals: {
         jQuery: true,
         console: true,
-        //module: true,
+        // module: true,
       },
-      warnOnly: true
+      warnOnly: true,
     },
-
-    //nunjucks: {
-    //  templatePath: 'app/templates/'
-    //}
   },
 
   server: {
     port: 8000,
-  }
+  },
 };

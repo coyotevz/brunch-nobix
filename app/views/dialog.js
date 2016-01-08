@@ -1,3 +1,4 @@
+/* global _ $ */
 var View = require('views/base/view');
 
 // NOTE: We are wrapping Bootstrap modal dialog.
@@ -6,7 +7,7 @@ var DialogContentView = View.extend({
   template: 'common/dialog_content.html',
   noWrap: false,
   optionNames: View.prototype.optionNames.concat([
-    'dialog', 'title', 'text', 'closeButton', 'buttons', 'template'
+    'dialog', 'title', 'text', 'closeButton', 'buttons', 'template',
   ]),
 
   initialize: function() {
@@ -50,13 +51,13 @@ var DialogView = View.extend({
     this.delegate('shown.bs.modal', function() {
       this.subview('modal-content').trigger('show');
       this.reposition();
-      $(window).on("resize.nbsDialog",
+      $(window).on('resize.nbsDialog',
                    _.debounce(_.bind(this.reposition, this), 200));
     });
 
     this.delegate('hidden.bs.modal', function() {
       this.subview('modal-content').trigger('hide');
-      $(window).off("resize.nbsDialog");
+      $(window).off('resize.nbsDialog');
     });
   },
 

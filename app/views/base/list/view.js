@@ -1,3 +1,4 @@
+/* global _ */
 var CollectionView = require('views/base/collection_view');
 var ListSelectionContextView = require('views/base/list/selection_context_view');
 
@@ -8,7 +9,9 @@ var ListView = CollectionView.extend({
   initialize: function() {
     CollectionView.prototype.initialize.apply(this, arguments);
     if (this.selectionContextView) {
-      var context = new this.selectionContextView({parent: this});
+      var context = new this.selectionContextView({
+        parent: this,
+      });
       this.subview('selection_context', context);
     }
   },
@@ -29,12 +32,11 @@ var ListView = CollectionView.extend({
       });
       this.listenTo(view, 'selected:change', this.onItemSelectedChange);
       return view;
-    } else {
-      throw new Error('The ListView#itemView property must be defined.');
     }
+    throw new Error('The ListView#itemView property must be defined.');
   },
 
-  onItemSelectedChange: function(item, opt) {
+  onItemSelectedChange: function(u_item, u_opt) {
     if (this.getSelected().length > 0) {
       /* has selection */
       this.$el.addClass('selection');
@@ -47,6 +49,7 @@ var ListView = CollectionView.extend({
       /* all unselected */
       this.$el.removeClass('selection');
     }
+
     var context = this.subview('selection_context');
     if (context) context.update();
   },
@@ -61,7 +64,7 @@ var ListView = CollectionView.extend({
 
   getSelected: function() {
     return _.filter(_.values(this.getItemViews()), 'selected');
-  }
+  },
 
 });
 

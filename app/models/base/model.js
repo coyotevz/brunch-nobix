@@ -1,4 +1,4 @@
-
+/* global _ Chaplin */
 var config = window.config || {};
 
 var Model = Chaplin.Model.extend({

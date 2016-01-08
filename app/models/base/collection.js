@@ -1,3 +1,4 @@
+/* global _ Chaplin */
 var Model = require('./model');
 
 var config = window.config || {};
@@ -19,13 +20,13 @@ var Collection = Chaplin.Collection.extend({
     if (!this.urlRoot) {
       throw new Error('A "urlRoot" property must be specified on Collection');
     }
-    if (this.parents && this.parents.length == 1) {
+    if (this.parents && this.parents.length === 1) {
       base = _.results(this.parents[0], 'url');
     } else {
       base = config.urlRoot || '';
     }
     return base.replace(/([^\/])$/, '$1') + this.urlRoot;
-  }
+  },
 
 });
 

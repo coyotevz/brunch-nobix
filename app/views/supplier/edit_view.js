@@ -9,6 +9,11 @@ var SupplierEditDialog = EditDialogView.extend({
     'hide': 'on_hide',
   },
 
+  bindings: {
+    '[name=name]': 'name',
+    '#name': 'name',
+  },
+
   cancel: function() {
     console.log('cancel');
     this.dialog.close();

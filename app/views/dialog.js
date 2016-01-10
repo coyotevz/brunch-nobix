@@ -57,6 +57,7 @@ var DialogView = View.extend({
 
     this.delegate('hidden.bs.modal', function() {
       this.subview('modal-content').trigger('hide');
+      this.close();
       $(window).off('resize.nbsDialog');
     });
   },
@@ -65,13 +66,9 @@ var DialogView = View.extend({
     this.$el.modal('show');
   },
 
-  hide: function() {
-    this.$el.modal('hide');
-  },
-
   close: function() {
     this.$el.modal('hide');
-    _.delay(_.bind(this.dispose, this), 500);
+    this.dispose();
   },
 
   reposition: function() {

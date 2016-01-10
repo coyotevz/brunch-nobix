@@ -1,5 +1,6 @@
 var View = require('views/base/view');
 var Dialog = require('views/dialog');
+var SupplierEditView = require('views/supplier/edit_view');
 
 var SupplierDetailView = View.extend({
   autoRender: false,
@@ -8,31 +9,7 @@ var SupplierDetailView = View.extend({
   initialize: function () {
     View.prototype.initialize.apply(this, arguments);
     this.delegate('click', '.action-edit', this.edit);
-
-    // TODO Only for develop dialog style, remove please
-    var dialog = new Dialog();
-    dialog.run({
-      title: 'Some title',
-      text: 'Hello, we are in dialog paragraph.',
-      buttons: {
-        'success': {
-          'label': 'OK',
-          'action': function(dialog, u_evt) {
-            console.log('OK');
-            dialog.close();
-          },
-        },
-        'cancel': {
-          'label': 'Cancel',
-          'style': 'btn-flat red-text',
-          'action': function(dialog, u_evt) {
-            console.log('Cancel');
-            dialog.close();
-          },
-        },
-      },
-    });
-
+    this.edit();
   },
 
   listen: {
@@ -40,26 +17,12 @@ var SupplierDetailView = View.extend({
   },
 
   edit: function(evt) {
-    evt.stopPropagation();
+    if (evt !== undefined)
+      evt.stopPropagation();
     var dialog = new Dialog();
     dialog.run({
-      title: 'Some title',
-      text: 'Hello, we are in dialog paragraph.',
-      buttons: {
-        'success': {
-          'label': 'OK',
-          'style': 'btn-flat blue-text',
-          'action': function(u_dialog, u_evt) {
-            console.log('OK');
-          },
-        },
-        'cancel': {
-          'label': 'Cancel',
-          'action': function(u_dialog, u_evt) {
-            console.log('Cancel');
-          },
-        },
-      },
+      view: SupplierEditView,
+      model: this.model,
     });
   },
 });

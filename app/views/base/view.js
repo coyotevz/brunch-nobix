@@ -23,6 +23,13 @@ var View = Chaplin.View.extend({
     return templateFunc;
   },
 
+  render: function() {
+    Chaplin.View.prototype.render.apply(this, arguments);
+    if (this.bindings && this.model) {
+      this.stickit();
+    }
+  },
+
   /* method borrowed from controller, this lets reuse views from views */
   reuse: function() {
     var method = arguments.length === 1 ? 'retrieve' : 'compose';

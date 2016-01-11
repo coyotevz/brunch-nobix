@@ -3,6 +3,19 @@ var View = require('views/base/view');
 
 // NOTE: We are wrapping Bootstrap modal dialog.
 
+var DialogView = View.extend({
+  container: 'body',
+  template: 'base/dialog/content.html',
+  noWrap: false,
+  optionNames: View.prototype.optionNames.concat([
+    'title', 'text', 'closeButton', 'buttons', 'dialog_class',
+  ]),
+
+  getTemplateData: function() {
+    return this;
+  },
+});
+
 var DialogContentView = View.extend({
   template: 'base/dialog/content.html',
   noWrap: false,
@@ -29,7 +42,7 @@ var DialogContentView = View.extend({
   },
 });
 
-var DialogView = View.extend({
+var _DialogView = View.extend({
   template: 'base/dialog/dialog.html',
   container: 'body',
 

@@ -7,7 +7,7 @@ var DialogContentView = View.extend({
   template: 'base/dialog/content.html',
   noWrap: false,
   optionNames: View.prototype.optionNames.concat([
-    'dialog', 'title', 'text', 'closeButton', 'buttons', 'template',
+    'dialog', 'title', 'text', 'closeButton', 'buttons', 'template', 'dialog_class',
   ]),
 
   initialize: function() {

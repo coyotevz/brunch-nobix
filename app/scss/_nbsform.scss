@@ -1,0 +1,16 @@
+.nbs-form {
+  font-size: 13px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  .nbs-form-row {
+    display: table-row;
+
+    .nbs-form-label,
+    .nbs-form-field,
+    .nbs-form-action {
+      display: table-cell;
+    }
+  }
+}

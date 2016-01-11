@@ -1,7 +1,7 @@
-var DialogView = require('views/dialog');
+var DialogView = require('views/base/dialog/dialog');
 
 var EditDialogView = DialogView.DialogContentView.extend({
-  template: 'common/edit_dialog.html',
+  template: 'base/dialog/edit.html',
   closeButton: false,
   optionNames: DialogView.DialogContentView.prototype.optionNames.concat([
     /* content_from must be filled with template name + .html extension */

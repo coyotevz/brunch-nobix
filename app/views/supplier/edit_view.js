@@ -1,4 +1,4 @@
-var EditDialogView = require('views/edit_dialog');
+var EditDialogView = require('views/base/dialog/edit');
 
 var SupplierEditDialog = EditDialogView.extend({
   content_form: 'supplier/edit.html', // Add extension .html to this file

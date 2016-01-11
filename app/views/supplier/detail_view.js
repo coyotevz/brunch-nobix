@@ -1,5 +1,5 @@
 var View = require('views/base/view');
-var Dialog = require('views/dialog');
+var Dialog = require('views/base/dialog/dialog');
 var SupplierEditView = require('views/supplier/edit_view');
 
 var SupplierDetailView = View.extend({

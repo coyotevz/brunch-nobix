@@ -109,8 +109,6 @@ var DialogView = View.extend({
       className: 'modal-content',
       container: this.$d,
       dialog: this,
-      title: null,
-      text: null,
       buttons: {},
     }, options);
 

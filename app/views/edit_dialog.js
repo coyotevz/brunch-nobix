@@ -4,13 +4,33 @@ var EditDialogView = DialogView.DialogContentView.extend({
   template: 'common/edit_dialog.html',
   closeButton: false,
   optionNames: DialogView.DialogContentView.prototype.optionNames.concat([
-    /* content_form must be filled with template name + .html extension */
-    'content_form',
+    /* content_from must be filled with template name + .html extension */
+    'content_from',
   ]),
 
-  events: {
-    'click [name=cancel]': 'cancel',
-    'click [name=save]': 'save',
+  listen: {
+    'change model': 'on_model_change',
+    'show': 'on_show',
+    'hide': 'on_hide',
+  },
+
+  initialize: function() {
+    DialogView.DialogContentView.prototype.initialize.apply(this, arguments);
+    this.delegate('click', '[name=cancel]', this.cancel);
+    this.delegate('click', '[name=save]', this.save);
+  },
+
+  on_show: function() {
+    console.log('show edit dialog');
+    window._model = this.model;
+  },
+
+  on_hide: function() {
+    console.log('hide edit dialog');
+  },
+
+  on_model_change: function() {
+    console.log('model change triggered');
   },
 
   cancel: function() {},

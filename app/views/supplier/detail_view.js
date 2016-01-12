@@ -1,6 +1,5 @@
 var View = require('views/base/view');
-var Dialog = require('views/base/dialog/dialog');
-var SupplierEditView = require('views/supplier/edit_view');
+var SupplierEditDialog = require('views/supplier/edit_dialog');
 
 var SupplierDetailView = View.extend({
   autoRender: false,
@@ -19,11 +18,10 @@ var SupplierDetailView = View.extend({
   edit: function(evt) {
     if (evt !== undefined)
       evt.stopPropagation();
-    var dialog = new Dialog();
-    dialog.run({
-      view: SupplierEditView,
-      model: this.model,
+    var dialog = new SupplierEditDialog({
+      modal: this.model,
     });
+    dialog.run();
   },
 });
 

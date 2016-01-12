@@ -14,6 +14,28 @@ var DialogView = View.extend({
   getTemplateData: function() {
     return this;
   },
+
+  render: function() {
+    View.prototype.render.apply(this, arguments);
+
+    // initialize backbone modal plugin
+    this.$el.modal({
+      show: false,
+    });
+  },
+
+  show: function() {
+    this.$el.modal('show');
+  },
+
+  close: function() {
+    this.$el.modal('hide');
+    this.dispose();
+  },
+
+  run: function(u_options) {
+    this.show();
+  },
 });
 
 var DialogContentView = View.extend({
@@ -42,7 +64,7 @@ var DialogContentView = View.extend({
   },
 });
 
-var _DialogView = View.extend({
+var u_DialogView = View.extend({
   template: 'base/dialog/dialog.html',
   container: 'body',
 

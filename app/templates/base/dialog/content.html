@@ -1,21 +1,27 @@
-<div class="modal-header">
-  {% block header %}
-    <h5 class="modal-title">{{ title }}</h5>
-  {% endblock %}
-</div>
-<div class="modal-body">
-  {% block body %}
-    <p>{{ text }}</p>
-  {% endblock %}
-</div>
-<div class="modal-footer">
-  {% block footer %}
-    <div class="footer-controls">
-      {% for name, button in buttons %}
-        <button class="{{ button.style|d('btn-flat') }} waves-effect" name="{{ name }}">{{ button.label }}</button>
-      {% endfor %}
+<div class="modal" role="dialog" tabindex="0">
+  <div class="modal-dialog {{ dialog_class }}">
+    <div class="modal-content">
+      <div class="modal-header">
+        {% block header %}
+          <h5 class="modal-title">{{ title }}</h5>
+        {% endblock %}
+      </div>
+      <div class="modal-body">
+        {% block body %}
+          <p>{{ text }}</p>
+        {% endblock %}
+      </div>
+      <div class="modal-footer">
+        {% block footer %}
+          <div class="footer-controls">
+            {% for name, button in buttons %}
+              <button class="{{ button.style|d('btn-flat') }} waves-effect" name="{{ name }}">{{ button.label }}</button>
+            {% endfor %}
+          </div>
+        {% endblock %}
+      </div>
     </div>
-  {% endblock %}
+  </div>
 </div>
 {# vim:ft=htmljinja:sw=2
 #}

@@ -14,8 +14,8 @@ var EditDialog = Dialog.extend({
     'dialog:hiden': 'on_hide',
   },
 
-  initialize: function() {
-    Dialog.prototype.initialize.apply(this, arguments);
+  render: function() {
+    Dialog.prototype.render.apply(this, arguments);
     this.delegate('click', '[name=cancel]', this.cancel);
     this.delegate('click', '[name=save]', this.save);
   },

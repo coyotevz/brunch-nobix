@@ -11,7 +11,7 @@ var SupplierEditDialog = EditDialog.extend({
   },
 
   cancel: function() {
-    console.log('cancel');
+    console.log('cancel ' + this.cid);
     this.close();
   },
 

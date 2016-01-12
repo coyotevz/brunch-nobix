@@ -44,11 +44,8 @@ var DialogView = View.extend({
   },
 
   close: function() {
-    // Check for this.$el because this can be called on modal('hide') cycle,
-    // when this.$el dosn't exist anymore
-    //if (this.$el !== undefined) this.$el.modal('hide');
     this.$el.modal('hide');
-    this.dispose();
+    this.remove();
   },
 
   reposition: function() {

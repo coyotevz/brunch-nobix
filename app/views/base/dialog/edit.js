@@ -10,8 +10,8 @@ var EditDialog = Dialog.extend({
 
   listen: {
     'change model': 'on_model_change',
-    'show': 'on_show',
-    'hide': 'on_hide',
+    'dialog:shown': 'on_show',
+    'dialog:hiden': 'on_hide',
   },
 
   initialize: function() {

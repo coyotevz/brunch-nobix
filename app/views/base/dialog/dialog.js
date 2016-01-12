@@ -26,14 +26,14 @@ var DialogView = View.extend({
     this.$d = this.$('.modal-dialog');
 
     this.delegate('shown.bs.modal', function() {
-      this.trigger('show');
+      this.trigger('dialog:shown');
       this.reposition();
       $(window).on('resize.nbsDialog',
                    _.debounce(_.bind(this.reposition, this), 200));
     });
 
     this.delegate('hidden.bs.modal', function() {
-      this.trigger('hide');
+      this.trigger('dialog:hiden');
       this.close();
       $(window).off('resize.nbsDialog');
     });
@@ -44,6 +44,9 @@ var DialogView = View.extend({
   },
 
   close: function() {
+    // Check for this.$el because this can be called on modal('hide') cycle,
+    // when this.$el dosn't exist anymore
+    //if (this.$el !== undefined) this.$el.modal('hide');
     this.$el.modal('hide');
     this.dispose();
   },

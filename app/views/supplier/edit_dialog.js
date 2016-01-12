@@ -1,6 +1,6 @@
-var EditDialogView = require('views/base/dialog/edit');
+var EditDialog = require('views/base/dialog/edit');
 
-var SupplierEditDialog = EditDialogView.extend({
+var SupplierEditDialog = EditDialog.extend({
   content_form: 'supplier/edit.html', // Add extension .html to this file
   dialog_class: 'nbs-supplier-edit-dialog',
   title: 'Editar Proveedor',
@@ -12,12 +12,12 @@ var SupplierEditDialog = EditDialogView.extend({
 
   cancel: function() {
     console.log('cancel');
-    this.dialog.close();
+    this.close();
   },
 
   save: function() {
     console.log('save');
-    this.dialog.close();
+    this.close();
   },
 });
 

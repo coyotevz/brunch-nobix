@@ -1,9 +1,9 @@
-var DialogView = require('views/base/dialog/dialog');
+var Dialog = require('views/base/dialog/dialog');
 
-var EditDialogView = DialogView.extend({
+var EditDialog = Dialog.extend({
   template: 'base/dialog/edit.html',
   closeButton: false,
-  optionNames: DialogView.prototype.optionNames.concat([
+  optionNames: Dialog.prototype.optionNames.concat([
     /* content_from must be filled with template name + .html extension */
     'content_from',
   ]),
@@ -15,7 +15,7 @@ var EditDialogView = DialogView.extend({
   },
 
   initialize: function() {
-    DialogView.prototype.initialize.apply(this, arguments);
+    Dialog.prototype.initialize.apply(this, arguments);
     this.delegate('click', '[name=cancel]', this.cancel);
     this.delegate('click', '[name=save]', this.save);
   },
@@ -37,4 +37,4 @@ var EditDialogView = DialogView.extend({
   save: function() {},
 });
 
-module.exports = EditDialogView;
+module.exports = EditDialog;

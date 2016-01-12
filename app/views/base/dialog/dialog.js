@@ -24,18 +24,27 @@ var DialogView = View.extend({
 
     // grab for future use
     this.$d = this.$('.modal-dialog');
+
+    this.delegate('shown.bs.modal', function() {
+      this.trigger('show');
+      this.reposition();
+      $(window).on('resize.nbsDialog',
+                   _.debounce(_.bind(this.reposition, this), 200));
+    });
+
+    this.delegate('hidden.bs.modal', function() {
+      this.trigger('hide');
+      this.close();
+      $(window).off('resize.nbsDialog');
+    });
   },
 
   show: function() {
     this.$el.modal('show');
-    this.reposition();
-    $(window).on('resize.nbsDialog',
-                 _.debounce(_.bind(this.reposition, this), 200));
   },
 
   close: function() {
     this.$el.modal('hide');
-    $(window).off('resize.nbsDialog');
     this.dispose();
   },
 

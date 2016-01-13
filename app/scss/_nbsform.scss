@@ -3,6 +3,16 @@
   display: table;
   table-layout: fixed;
   width: 100%;
+  line-height: 1.4em;
+  input {
+    border: 0;
+    &::-moz-placeholder {
+      color: #999;
+    }
+    &:focus::-moz-placeholder {
+      color: #333;
+    }
+  }
 
   .nbs-form-row {
     display: table-row;
@@ -11,6 +21,46 @@
     .nbs-form-field,
     .nbs-form-action {
       display: table-cell;
+      padding: 4px;
+      vertical-align: top;
+
+      input {
+        text-overflow: ellipsis;
+      }
+
+    }
+
+    .nbs-form-label {
+      width: 120px;
+      padding-left: 0;
+    }
+
+    .nbs-form-field {
+      input {
+        width: 100%;
+      }
+    }
+
+    .nbs-form-action {
+      padding-right: 0;
+      width: 20px;
+      visibility: hidden;
+
+      .material-icons {
+        font-size: 16px;
+        color: #999;
+        vertical-align: middle;
+      }
+
+      &:hover .material-icons {
+        color: #343434;
+      }
+    }
+
+    &:hover {
+      .nbs-form-action {
+        visibility: visible;
+      }
     }
   }
 }

@@ -1,26 +1,22 @@
+{% macro render_field(label, field, placeholder) %}
+  <div class="nbs-form-row">
+    <div class="nbs-form-label">
+      <span>{{ label }}</span>
+    </div>
+    <div class="nbs-form-field">
+      <input name="{{ field }}" placeholder="{{ placeholder }}">
+    </div>
+    <div class="nbs-form-action">
+      <i class="material-icons">close</i>
+    </div>
+  </div>
+{% endmacro %}
+
 <div class="nbs-form">
-  <div class="nbs-form-row">
-    <div class="nbs-form-label">
-      <span>Label</span>
-    </div>
-    <div class="nbs-form-field">
-      <span>Field</span>
-    </div>
-    <div class="nbs-form-action">
-      <span>x</span>
-    </div>
-  </div>
-  <div class="nbs-form-row">
-    <div class="nbs-form-label">
-      <span>Label</span>
-    </div>
-    <div class="nbs-form-field">
-      <span>Field</span>
-    </div>
-    <div class="nbs-form-action">
-      <span>x</span>
-    </div>
-  </div>
+  {{ render_field('Nombre', 'nombre', 'Agrega un nombre') }}
+  {{ render_field('Dirección', 'direccion', 'Agrega una dirección') }}
+  {{ render_field('CUIT', 'cuit', 'Agrega una Clave Única de Identificación Tributaria') }}
+  {{ render_field('Telefono', 'telefono', 'Agrega un teléfono') }}
 </div>
 
 {# vim: ft=htmljinja:sw=2

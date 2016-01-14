@@ -92,6 +92,22 @@
         $('.nbs-form-label .label input').on('focusin', function(evt) {
           $(evt.target).parents('.nbs-form-label').next().find('input').focus();
         });
+        $('.nbs-form-row').on('mouseenter', function(evt) {
+          $(evt.currentTarget).addClass('mouse-hover');
+        }).on('mouseleave', function(evt) {
+          $(evt.currentTarget).removeClass('mouse-hover');
+        }).on('focusin', '.nbs-form-field input', function(evt) {
+          $(evt.delegateTarget).addClass('focused-input');
+        }).on('focusout', '.nbs-form-field input', function(evt) {
+          $(evt.delegateTarget).removeClass('focused-input');
+        }).on('change keyup', '.nbs-form-field input', function(evt) {
+          if (!$.trim(evt.target.value)) {
+            $(evt.delegateTarget).removeClass('has-content');
+          } else {
+            $(evt.delegateTarget).addClass('has-content');
+          }
+        });
+        $('.nbs-form-row input').trigger('change');
       });
     </script>
 

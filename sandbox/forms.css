@@ -6,9 +6,24 @@ h3 {
   width: 500px;
 }
 
+.modal-body {
+  padding: 16px 24px;
+}
+
 .modal-header .title {
   font-size: 20px;
   font-weight: 300;
+}
+
+.modal-footer {
+  padding-top: 0;
+}
+
+.modal-footer button {
+  font-size: 14px;
+  line-height: 20px;
+  height: unset;
+  padding: 8px;
 }
 
 .nbs-form {

@@ -4,6 +4,7 @@ h3 {
 
 .demo-form {
   width: 500px;
+  border-radius: 3px;
 }
 
 .modal-body {

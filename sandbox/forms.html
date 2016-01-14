@@ -87,5 +87,13 @@
 
     </div>
 
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        $('.nbs-form-label .label input').on('focusin', function(evt) {
+          $(evt.target).parents('.nbs-form-label').next().find('input').focus();
+        });
+      });
+    </script>
+
   </body>
 </html>

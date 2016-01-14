@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es-ar">
-<head>
-  <meta charset="utf-8">
-  <title>From style development</title>
-  <link rel="stylesheet" href="../public/css/app.css">
-  <link rel="stylesheet" href="forms.css">
-  <script src="../bower_components/jquery/dist/jquery.js"></script>
-</head>
-<body>
-  <h3>Form style development</h3>
+  <head>
+    <meta charset="utf-8">
+    <title>From style development</title>
+    <link rel="stylesheet" href="../public/css/app.css">
+    <link rel="stylesheet" href="forms.css">
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Form style development</h3>
 
-  <div class="row">
-    <div class="col s4">
-      <div class="nbs-form">
-        <div class="nbs-form-row">
-          <div class="nbs-form-label">
-            <span>Nombre</span>
-          </div>
-          <div class="nbs-form-field">
-            <input placeholder="Agrega un nombre" name="nombre">
-          </div>
-          <div class="nbs-form-action"><i class="material-icons">close</i></div>
+      <div class="demo-form modal-content">
+        <div class="modal-header">
+          <span class="title">Demo Form</span>
         </div>
-        <div class="nbs-form-row">
-          <div class="nbs-form-label">
-            <span>Nombre</span>
+
+        <div class="modal-body">
+          <div class="nbs-form">
+            <div class="nbs-form-row">
+              <div class="nbs-form-label">
+                <span class="label">
+                  <input name="nombre-key" value="Nombre" readonly>
+                </span>
+              </div>
+              <div class="nbs-form-field">
+                <input name="nombre" placeholder="Agrega un nombre">
+              </div>
+              <div class="nbs-form-action">
+                <i class="material-icons">close</i>
+              </div>
+            </div>
+
+            <div class="nbs-form-row">
+              <div class="nbs-form-label">
+                <span class="label">
+                  <input name="direccion-key" value="Dirección" readonly>
+                </span>
+              </div>
+              <div class="nbs-form-field">
+                <input name="direccion" placeholder="Agrega una dirección">
+              </div>
+              <div class="nbs-form-action">
+                <i class="material-icons">close</i>
+              </div>
+            </div>
+
+            <div class="nbs-form-row">
+              <div class="nbs-form-label">
+                <span class="label">
+                  <input name="telefono-key" value="Teléfono" readonly>
+                </span>
+              </div>
+              <div class="nbs-form-field">
+                <input name="telefono" placeholder="Agrega un teléfono">
+              </div>
+              <div class="nbs-form-action">
+                <i class="material-icons">close</i>
+              </div>
+            </div>
+
+            <div class="nbs-form-row">
+              <div class="nbs-form-label">
+                <span class="label">
+                  <input name="cuit-label" value="CUIT" readonly>
+                </span>
+              </div>
+              <div class="nbs-form-field">
+                <input name="cuit" placeholder="Agrega una Clave Única de Idetificación Tributaria">
+              </div>
+              <div class="nbs-form-action">
+                <i class="material-icons">close</i>
+              </div>
+            </div>
+
           </div>
-          <div class="nbs-form-field">
-            <input placeholder="Agrega un nombre" name="nombre">
-          </div>
-          <div class="nbs-form-action"><i class="material-icons">close</i></div>
         </div>
-        <div class="nbs-form-row">
-          <div class="nbs-form-label">
-            <span>Nombre</span>
-          </div>
-          <div class="nbs-form-field">
-            <input placeholder="Agrega un nombre" name="nombre">
-          </div>
-          <div class="nbs-form-action"><i class="material-icons">close</i></div>
+
+        <div class="modal-footer">
         </div>
       </div>
+
     </div>
-  </div>
-</body>
+
+  </body>
 </html>

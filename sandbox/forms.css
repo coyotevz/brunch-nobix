@@ -1,3 +1,71 @@
 h3 {
   color: rosybrown;
 }
+
+.demo-form {
+  width: 500px;
+}
+
+.modal-header .title {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.nbs-form {
+  font-size: 13px;
+  display: table;
+  width: 100%;
+  line-height: 18.2px;
+}
+
+.nbs-form .nbs-form-row {
+  display: table-row;
+}
+
+.nbs-form .nbs-form-row .nbs-form-label,
+.nbs-form .nbs-form-row .nbs-form-field,
+.nbs-form .nbs-form-row .nbs-form-action {
+  display: table-cell;
+  padding: 4px;
+  vertical-align: top;
+}
+
+.nbs-form .nbs-form-row .nbs-form-label {
+  width: 120px;
+  padding-left: 0;
+}
+
+.nbs-form .nbs-form-row input {
+  width: 100%;
+  border: 0;
+}
+
+.nbs-form .nbs-form-row .nbs-form-field input::-moz-placeholder {
+  color: #999;
+}
+
+.nbs-form .nbs-form-row .nbs-form-field input:focus::-moz-placeholder {
+  color: inherit;
+}
+
+.nbs-form .nbs-form-row .nbs-form-action {
+  padding-right: 0;
+  width: 20px;
+  visibility: hidden;
+}
+
+.nbs-form .nbs-form-row:hover .nbs-form-action {
+  visibility: visible;
+}
+
+.nbs-form .nbs-form-row .nbs-form-action .material-icons {
+  color: #999;
+  font-size: 16px;
+  line-height: 18.2px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.nbs-form .nbs-form-row .nbs-form-action .material-icons:hover {
+  color: #343434;
+}

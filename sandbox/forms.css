@@ -46,9 +46,30 @@ h3 {
   vertical-align: top;
 }
 
+.nbs-form .nbs-form-row > :first-child {
+  padding-left: 0;
+}
+
+.nbs-form .nbs-form-row > :last-child {
+  padding-right: 0;
+}
+
+.nbs-form .nbs-form-row .nbs-form-label input {
+  opacity: 0;
+}
+
+.nbs-form .nbs-form-row.has-content .nbs-form-label input,
+.nbs-form .nbs-form-row.focused-input .nbs-form-label input {
+  opacity: 1;
+}
+
 .nbs-form .nbs-form-row .nbs-form-label {
   width: 120px;
-  padding-left: 0;
+}
+
+
+.nbs-form .nbs-form-row.has-content .nbs-form-label,
+.nbs-form .nbs-form-row.focused-input .nbs-form-label {
 }
 
 .nbs-form .nbs-form-row input {
@@ -65,12 +86,11 @@ h3 {
 }
 
 .nbs-form .nbs-form-row .nbs-form-action {
-  padding-right: 0;
   width: 20px;
   visibility: hidden;
 }
 
-.nbs-form .nbs-form-row:hover .nbs-form-action {
+.nbs-form .nbs-form-row.has-content.mouse-hover .nbs-form-action {
   visibility: visible;
 }
 

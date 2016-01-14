@@ -106,6 +106,8 @@
           } else {
             $(evt.delegateTarget).addClass('has-content');
           }
+        }).on('click', '.nbs-form-action i', function(evt) {
+          $(evt.delegateTarget).find('.nbs-form-field input').val('').trigger('change');
         });
         $('.nbs-form-row input').trigger('change');
       });

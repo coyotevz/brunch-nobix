@@ -1,66 +1,99 @@
+.demo-form {
+  width: 500px;
+  border-radius: 3px;
+}
+
+.modal-body {
+  padding: 16px 24px;
+}
+
+.modal-header .title {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.modal-footer {
+  padding-top: 0;
+
+  button {
+    font-size: 14px;
+    line-height: 20px;
+    height: unset;
+    padding: 8px;
+  }
+}
+
 .nbs-form {
   font-size: 13px;
   display: table;
-  table-layout: fixed;
   width: 100%;
-  line-height: 1.4em;
-  input {
-    border: 0;
-    &::-moz-placeholder {
-      color: #999;
-    }
-    &:focus::-moz-placeholder {
-      color: #333;
-    }
-  }
+  line-height: 18.2px;
 
   .nbs-form-row {
     display: table-row;
 
-    .nbs-form-label,
-    .nbs-form-field,
-    .nbs-form-action {
+    > div {
       display: table-cell;
       padding: 4px;
       vertical-align: top;
-
-      input {
-        text-overflow: ellipsis;
-      }
-
     }
+
+    > :first-child { padding-left: 0; }
+    > :last-child { padding-right: 0; }
 
     .nbs-form-label {
       width: 120px;
-      padding-left: 0;
+
+      input {
+        opacity: 0;
+      }
     }
 
-    .nbs-form-field {
-      input {
-        width: 100%;
+    &.has-content,
+    &.focused-input {
+      .nbs-form-label input {
+        opacity: 1;
+      }
+    }
+
+    input {
+      width: 100%;
+      border: 0;
+    }
+
+    .nbs-form-field input {
+      &::-moz-placeholder {
+        color: #999;
+      }
+
+      &:focus::-moz-placeholder {
+        color: inherit;
       }
     }
 
     .nbs-form-action {
-      padding-right: 0;
       width: 20px;
       visibility: hidden;
+    }
 
-      .material-icons {
-        font-size: 16px;
-        color: #999;
-        vertical-align: middle;
-      }
+    &.has-content.mouse-hover .nbs-form-action {
+      visibility: visible;
+    }
 
-      &:hover .material-icons {
+    .nbs-form-action .material-icons {
+      color: #999;
+      font-size: 16px;
+      line-height: 18.2px;
+      vertical-align: middle;
+      cursor: pointer;
+
+      &:hover {
         color: #343434;
       }
     }
-
-    &:hover {
-      .nbs-form-action {
-        visibility: visible;
-      }
-    }
   }
+}
+
+.nbs-supplier-edit-dialog {
+  width: 500px;
 }

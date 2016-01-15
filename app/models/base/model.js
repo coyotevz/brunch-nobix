@@ -17,6 +17,16 @@ var Model = Chaplin.Model.extend({
     return base.replace(/([^\/])$/, '$1/') + encodeURIComponent(this.id);
   },
 
+  // short cut for check backbone.trackit
+  isTracked: function() {
+    return this._trackingChanges;
+  },
+
+  // short cut for backbone.trackit
+  isChanged: function() {
+    return !_.isEmpty(this._unsavedChanges);
+  },
+
 });
 
 module.exports = Model;

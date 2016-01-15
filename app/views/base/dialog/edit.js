@@ -1,3 +1,5 @@
+/* global _ */
+
 var Dialog = require('views/base/dialog/dialog');
 
 var EditDialog = Dialog.extend({
@@ -21,16 +23,29 @@ var EditDialog = Dialog.extend({
   },
 
   on_show: function() {
-    console.log('show edit dialog');
-    window._model = this.model;
+    if (this.model) {
+      console.log('start tracking model');
+      this.model.startTracking();
+    }
   },
 
   on_hide: function() {
-    console.log('hide edit dialog');
+    if (this.model) {
+      console.log('stop tracking model');
+      this.model.stopTracking();
+    }
   },
 
-  on_model_change: function() {
-    console.log('model change triggered');
+  on_model_change: function(model, options) {
+    window._model = model;
+    console.log('model change detected');
+
+    if (options.stickitChange) {
+      var isValid = model.isValid(options.stickitChange.observe);
+      var enabled = isValid && model.isChanged() && _.isEmpty(model.validationError || {});
+      console.log('enable:', !enabled);
+      this.$('[name=save]').attr('disabled', !enabled);
+    }
   },
 
   cancel: function() {},

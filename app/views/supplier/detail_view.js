@@ -19,7 +19,7 @@ var SupplierDetailView = View.extend({
     if (evt !== undefined)
       evt.stopPropagation();
     var dialog = new SupplierEditDialog({
-      modal: this.model,
+      model: this.model,
     });
     dialog.run();
   },

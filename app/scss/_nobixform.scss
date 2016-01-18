@@ -29,7 +29,7 @@
   width: 100%;
   line-height: 18.2px;
 
-  .nbs-form-row {
+  .form-row {
     display: table-row;
 
     > div {
@@ -41,7 +41,7 @@
     > :first-child { padding-left: 0; }
     > :last-child { padding-right: 0; }
 
-    .nbs-form-label {
+    .row-label {
       width: 120px;
 
       input {
@@ -51,7 +51,7 @@
 
     &.has-content,
     &.focused-input {
-      .nbs-form-label input {
+      .row-label input {
         opacity: 1;
       }
     }
@@ -61,7 +61,7 @@
       border: 0;
     }
 
-    .nbs-form-field input {
+    .row-field input {
       &::-moz-placeholder {
         color: #999;
       }
@@ -71,16 +71,16 @@
       }
     }
 
-    .nbs-form-action {
+    .row-action {
       width: 20px;
       visibility: hidden;
     }
 
-    &.has-content.mouse-hover .nbs-form-action {
+    &.has-content.mouse-hover .row-action {
       visibility: visible;
     }
 
-    .nbs-form-action .material-icons {
+    .row-action .material-icons {
       color: #999;
       font-size: 16px;
       line-height: 18.2px;

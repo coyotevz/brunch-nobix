@@ -1,12 +1,14 @@
 {% macro render_field(label, field, placeholder) %}
-  <div class="nbs-form-row">
-    <div class="nbs-form-label">
-      <span>{{ label }}</span>
+  <div class="form-row">
+    <div class="row-label">
+      <span class="label">
+        <input value="{{ label }}" readonly="readonly">
+      </span>
     </div>
-    <div class="nbs-form-field">
+    <div class="row-field">
       <input name="{{ field }}" placeholder="{{ placeholder }}">
     </div>
-    <div class="nbs-form-action">
+    <div class="row-action">
       <i class="material-icons">close</i>
     </div>
   </div>

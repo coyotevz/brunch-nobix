@@ -10,6 +10,18 @@ var SupplierEditDialog = EditDialog.extend({
     '#name': 'name',
   },
 
+  render: function() {
+    EditDialog.prototype.render.apply(this, arguments);
+    this.$el.find('.form-row').formRow();
+    this.$el.find('.row-field input').trigger('change');
+
+    if (this.model !== null) {
+      this.model.once('change', $.proxy(function() {
+        this.$el.find('.row-field input').trigger('change');
+      }, this));
+    }
+  },
+
   cancel: function() {
     console.log('cancel ' + this.cid);
     this.close();

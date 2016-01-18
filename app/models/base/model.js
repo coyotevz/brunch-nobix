@@ -1,13 +1,12 @@
 /* global _ Backbone Chaplin */
 var config = window.config || {};
 
-//var Model = Backbone.AssociatedModel.extend({
 var Model = Chaplin.Model.extend({
 
-  //initialize: function() {
-  //  Chaplin.Model.prototype.initialize.apply(this, arguments);
-  //  _.extend(this, Backbone.AssociatedModel);
-  //},
+  initialize: function() {
+    _.extend(this, Backbone.AssociatedModel);
+    Chaplin.Model.prototype.initialize.apply(this, arguments);
+  },
 
   url: function() {
     var base;
@@ -33,9 +32,6 @@ var Model = Chaplin.Model.extend({
     return !_.isEmpty(this._unsavedChanges);
   },
 
-//}, Chaplin.Model.prototype);
 });
-
-_.extend(Model.prototype, Backbone.AssociatedModel.prototype);
 
 module.exports = Model;

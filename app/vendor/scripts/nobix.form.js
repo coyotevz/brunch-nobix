@@ -57,7 +57,6 @@
     },
 
     onChangeField: function() {
-      console.log('change field:', this.$field.val());
       if (!$.trim(this.$field.val())) {
         this.remove('has-content');
       } else {

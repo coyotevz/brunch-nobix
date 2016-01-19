@@ -9,7 +9,7 @@ var SupplierDetailView = View.extend({
   //  'sync model': 'render',
   //},
 
-  binds: {
+  bindings: {
     '[bs-bind=name]': 'name',
   },
 
@@ -17,7 +17,7 @@ var SupplierDetailView = View.extend({
     View.prototype.initialize.apply(this, arguments);
     this.delegate('click', '.action-edit', this.edit);
     this.listenToOnce(this.model, 'sync', this.render);
-    //this.edit();
+    this.edit();
   },
 
   edit: function(evt) {

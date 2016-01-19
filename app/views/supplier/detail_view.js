@@ -8,7 +8,7 @@ var SupplierDetailView = View.extend({
   initialize: function () {
     View.prototype.initialize.apply(this, arguments);
     this.delegate('click', '.action-edit', this.edit);
-    this.edit();
+    //this.edit();
   },
 
   listen: {

@@ -24,6 +24,7 @@ var EditDialog = Dialog.extend({
 
   onShow: function() {
     if (this.model) {
+      window._model = this.model;
       console.log('start tracking model');
       this.model.startTracking();
     }
@@ -37,7 +38,6 @@ var EditDialog = Dialog.extend({
   },
 
   onModelChange: function(model, options) {
-    window._model = model;
     console.log('model change detected');
 
     if (options.stickitChange) {

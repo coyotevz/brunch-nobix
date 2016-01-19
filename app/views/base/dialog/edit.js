@@ -11,9 +11,9 @@ var EditDialog = Dialog.extend({
   ]),
 
   listen: {
-    'change model': 'on_model_change',
-    'dialog:shown': 'on_show',
-    'dialog:hiden': 'on_hide',
+    'change model': 'onModelChange',
+    'dialog:shown': 'onShow',
+    'dialog:hiden': 'onHide',
   },
 
   render: function() {
@@ -22,21 +22,21 @@ var EditDialog = Dialog.extend({
     this.delegate('click', '[name=save]', this.save);
   },
 
-  on_show: function() {
+  onShow: function() {
     if (this.model) {
       console.log('start tracking model');
       this.model.startTracking();
     }
   },
 
-  on_hide: function() {
+  onHide: function() {
     if (this.model) {
       console.log('stop tracking model');
       this.model.stopTracking();
     }
   },
 
-  on_model_change: function(model, options) {
+  onModelChange: function(model, options) {
     window._model = model;
     console.log('model change detected');
 

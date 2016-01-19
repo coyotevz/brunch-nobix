@@ -27,6 +27,9 @@ var EditDialog = Dialog.extend({
       window._model = this.model;
       console.log('start tracking model');
       this.model.startTracking();
+      this.model.once('sync', function(model) {
+        model.resetAttributes();
+      });
     }
   },
 

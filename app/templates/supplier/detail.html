@@ -18,7 +18,7 @@
       <div class="card-content">
         <div class="row">
           <div class="col s3 offset-s2">
-            <h4 class="card-title grey-text text-darken-4">{{ name }}</h4>
+            <h4 class="card-title grey-text text-darken-4" bs-bind="name">{{ name }}</h4>
             <p class="medium-small grey-text">Marcas</p>
           </div>
           <div class="col s2 center-align">
@@ -43,7 +43,7 @@
 
     <div class="card-reveal">
       <div class="row card-title grey-text text-darken-4">
-        <span class="supplier-name">{{ name }}</span>
+        <span class="supplier-name" bs-bind="name">{{ name }}</span>
         <a class="icon-toggle waves-effect action-edit left"><i class="material-icons">edit</i></a>
         <i class="material-icons right">close</i>
       </div>

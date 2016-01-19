@@ -5,14 +5,19 @@ var SupplierDetailView = View.extend({
   autoRender: false,
   template: 'supplier/detail.html',
 
+  //listen: {
+  //  'sync model': 'render',
+  //},
+
+  binds: {
+    '[bs-bind=name]': 'name',
+  },
+
   initialize: function () {
     View.prototype.initialize.apply(this, arguments);
     this.delegate('click', '.action-edit', this.edit);
+    this.listenToOnce(this.model, 'sync', this.render);
     //this.edit();
-  },
-
-  listen: {
-    'sync model': 'render',
   },
 
   edit: function(evt) {

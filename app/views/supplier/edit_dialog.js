@@ -1,3 +1,4 @@
+/* global $ */
 var EditDialog = require('views/base/dialog/edit');
 
 var SupplierEditDialog = EditDialog.extend({
@@ -13,7 +14,6 @@ var SupplierEditDialog = EditDialog.extend({
   render: function() {
     EditDialog.prototype.render.apply(this, arguments);
     this.$el.find('.form-row').formRow();
-    this.$el.find('.row-field input').trigger('change');
 
     if (this.model !== null) {
       this.model.once('change', $.proxy(function() {

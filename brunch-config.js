@@ -55,28 +55,9 @@ exports.config = {
   },
 
   plugins: {
-    jshint: {
-      pattern: /^app\/.*\.js$/,
-      options: {
-        bitwise: true,
-        curly: true,
-        undef: true,
-        unused: true,
-        eqeqeq: true,
-        newcap: true,
-        nonew: true,
-        strict: 'global',
-
-        browser: true,
-        devel: true,
-        jquery: true,
-      },
-      globals: {
-        jQuery: true,
-        console: true,
-        // module: true,
-      },
-      warnOnly: true,
+    eslint: {
+      pattern: /^app\/.*\.js?$/,
+      warnOnly: 'yes',
     },
   },
 

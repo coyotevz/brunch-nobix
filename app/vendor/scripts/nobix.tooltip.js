@@ -3,17 +3,19 @@
  *   and on http://materializecss.com/dialogs.html#tooltip
  */
 
+/* global jQuery */
+
 
 (function($) {
-  "use strict";
+  'use strict';
 
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
 
   var Tooltip = function(element, options) {
-    this.options    = null;
-    this.timeout    = null;
-    this.$element   = null;
+    this.options = null;
+    this.timeout = null;
+    this.$element = null;
 
     this.init(element, options);
   };
@@ -39,8 +41,8 @@
 
       for (var i = triggers.length; i--;) {
         var trigger = triggers[i];
-        var eventIn = trigger == 'hover' ? 'mouseenter': 'focusin';
-        var eventOut = trigger == 'hover' ? 'mouseleave': 'focusout';
+        var eventIn = trigger === 'hover' ? 'mouseenter': 'focusin';
+        var eventOut = trigger === 'hover' ? 'mouseleave': 'focusout';
 
         this.$element.on(eventIn + '.tooltip', $.proxy(this.enter, this));
         this.$element.on(eventOut + '.tooltip', $.proxy(this.leave, this));
@@ -52,10 +54,10 @@
     getOptions: function(options) {
       options = $.extend({}, Tooltip.DEFAULTS, this.$element.data(), options);
 
-      if (options.delay && typeof options.delay == 'number') {
+      if (options.delay && typeof options.delay === 'number') {
         options.delay = {
           show: options.delay,
-          hide: options.delay
+          hide: options.delay,
         };
       }
 
@@ -106,13 +108,13 @@
 
         var inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0]);
         if (e.isDefaultPrevented() || !inDom) return;
-        var that = this;
+        var u_that = this;
         var $tip = this.tip();
         var $container = $(this.options.container || 'body');
 
         this.setContent();
         if (this.options.animation) $tip.addClass('fade');
-        var placement = typeof this.options.placement == 'function' ?
+        var placement = typeof this.options.placement === 'function' ?
           this.options.placement.call(this, $tip[0], this.$element[0]) :
           this.options.placement;
 
@@ -149,7 +151,7 @@
       if (!this.$tip) {
         var sel = this.options.selector || '[rel="tooltip"]';
         this.$tip = $(sel).length ? $(sel) : $(this.options.template);
-        if (this.$tip.length != 1) {
+        if (this.$tip.length !== 1) {
           throw new Error('tooltip `template` option must consists of exactly 1 top-level element!');
         }
       }
@@ -167,9 +169,9 @@
         this.$element.offset()
       );
 
-      var offset = placement == 'bottom' ? { top: pos.top + pos.height, left: pos.left + pos.width / 2 - width / 2  } :
-                   placement == 'top'    ? { top: pos.top - height,     left: pos.left + pos.width / 2 - width / 2  } :
-                   placement == 'left'   ? { top: pos.top + pos.height / 2 - height / 2, left: pos.left - width     } :
+      var offset = placement === 'bottom' ? { top: pos.top + pos.height, left: pos.left + pos.width / 2 - width / 2 } :
+                   placement === 'top' ? { top: pos.top - height, left: pos.left + pos.width / 2 - width / 2 } :
+                   placement === 'left' ? { top: pos.top + pos.height / 2 - height / 2, left: pos.left - width } :
                 /* placement == 'right' */ { top: pos.top + pos.height / 2 - height / 2, left: pos.left + pos.width };
 
       // manually read margins becaouse getBoundingClientRect includes difference
@@ -189,17 +191,17 @@
         using: function(props) {
           $tip.css({
             top: Math.round(props.top),
-            left: Math.round(props.left)
+            left: Math.round(props.left),
           });
-        }
+        },
       }, offset), 0);
 
       var actualHeight = $tip[0].offsetHeight;
-      var actualWidth = $tip[0].offsetWidth;
-      if (placement == 'top' && actualHeight != height) {
+      var u_actualWidth = $tip[0].offsetWidth;
+      if (placement === 'top' && actualHeight !== height) {
         offset.top = offset.top + height - actualHeight;
       }
-      
+
       $tip
         .offset(offset)
         .addClass('in');
@@ -230,14 +232,14 @@
       var $e = this.$element;
       var o = this.options;
 
-      title = $e.attr('data-original-title') || (typeof o.title == 'function' ? o.title.call($e[0]) : o.title);
+      title = $e.attr('data-original-title') || (typeof o.title === 'function' ? o.title.call($e[0]) : o.title);
 
       return title;
     },
 
     _fixTitle: function() {
       var $e = this.$element;
-      if ($e.attr('title') || typeof $e.attr('data-original-title') != 'string') {
+      if ($e.attr('title') || typeof $e.attr('data-original-title') !== 'string') {
         $e.attr('data-original-title', $e.attr('title') || '').attr('title', '');
       }
     },
@@ -248,19 +250,19 @@
 
   function Plugin(option) {
     return this.each(function() {
-      var $this   = $(this);
-      var data    = $this.data('nobix.tooltip');
-      var options = typeof option == 'object' && option;
+      var $this = $(this);
+      var data = $this.data('nobix.tooltip');
+      var options = typeof option === 'object' && option;
 
       if (!data && /destroy|hide/.test(option)) return;
       if (!data) $this.data('nobix.tooltip', (data = new Tooltip(this, options)));
-      if (typeof option == 'string') data[option]();
+      if (typeof option === 'string') data[option]();
     });
   }
 
   var old = $.fn.tooltip;
 
-  $.fn.tooltip             = Plugin;
+  $.fn.tooltip = Plugin;
   $.fn.tooltip.Constructor = Tooltip;
 
 

@@ -17,10 +17,10 @@
     "auto-reload-brunch": "^1.8.1",
     "clean-css-brunch": "^1.8.0",
     "css-brunch": "^1.7.0",
+    "eslint-brunch": "^2.0.0",
     "javascript-brunch": "^1.8.0",
-    "jshint-brunch": "^1.8.0",
+    "nunjucks-compile-brunch": "*",
     "sass-brunch": "^1.9.1",
-    "uglify-js-brunch": "^1.7.8",
-    "nunjucks-compile-brunch": "*"
+    "uglify-js-brunch": "^1.7.8"
   }
 }
